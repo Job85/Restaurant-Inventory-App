@@ -18,7 +18,7 @@ For this deliverable I will be creating a fullstack app. This app will be design
 ### Backend ERD
 
 ### Frontend CHD
-![B73D6B36-89B9-4451-926C-7E2D95DDE591.jpeg]
+
 
 
 ### Technologies Used
