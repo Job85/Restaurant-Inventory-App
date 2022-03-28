@@ -1,5 +1,5 @@
 # The Restaurant Inventory App
-For this deliverable I will be creating a fullstack app. This app will be designed to Get ready to streamline your inventory process!
+For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim. Get ready to streamline your inventory process!
 
 ## Features
 - Create, update & delete lists as well as individual items. All in real time
@@ -7,7 +7,7 @@ For this deliverable I will be creating a fullstack app. This app will be design
 - 
 
 
-## [User Site]()
+## [User Site In Works]()
 
 ### Getting Started
 
