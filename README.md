@@ -12,13 +12,13 @@ For this deliverable I will be creating a fullstack app. This app will be design
 ### Getting Started
 
 
-### [Trello Board]()
+### [Trello Board](https://trello.com/b/8bjxsRS1/restraunt-app)
 
 
 ### Backend ERD
-
+![Backend ERD](/img/ERD.jpeg)
 ### Frontend CHD
-
+![Frontend CHD](/img/CHD.jpeg)
 
 
 ### Technologies Used
