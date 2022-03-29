@@ -7,8 +7,15 @@ const getItem = async (req, res) => {
     res.send(gotItem)
 }
 
+const postItem = async (req, res) => {
+    let postedItem = await Item.find({ key: 'Dairy' })
+    console.log('posted item')
+    res.send(postedItem)
+}
+
 
 
 module.exports = {
-    getItem
+    getItem,
+    postItem
 }

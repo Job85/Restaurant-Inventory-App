@@ -1,17 +1,17 @@
 const db = require('../db')
-const { InventoryList } = require('../models')
+const { Inventory } = require('../models')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-const inventoryList = async () => {
-    const inventoryLists = []
+const inventory = async () => {
+    const inventories = []
 
-    await InventoryList.insertOne(inventoryLists)
+    await Inventory.insertOne(inventories)
     console.log('Created Inventory Lists!')
 }
 
 const run = async () => {
-    await inventoryList()
+    await inventory()
     db.close()
 }
 

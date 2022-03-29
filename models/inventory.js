@@ -1,6 +1,6 @@
 const { Schema } = require('mongoose')
 
-const InventoryList = new Schema(
+const Inventory = new Schema(
     {
         createdDate: { type: Date, require: true },
         department_id: { type: Schema.Types.ObjectId, ref: 'department_id' }
@@ -8,4 +8,4 @@ const InventoryList = new Schema(
     { timestamps: true }
 )
 
-module.exports = InventoryList
+module.exports = Inventory

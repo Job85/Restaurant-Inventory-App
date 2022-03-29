@@ -7,7 +7,7 @@ const Item = new Schema(
         item: { type: String, require: true },
         size: { type: String, require: true },
         count: { type: Number, require: true },
-        inventoryList_id: { type: Schema.Types.ObjectId, ref: 'inventoryList_id' }
+        inventory_id: { type: Schema.Types.ObjectId, ref: 'inventory_id' }
     },
     { timestamps: true }
 )

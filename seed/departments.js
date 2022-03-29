@@ -4,10 +4,7 @@ const { Department } = require('../models')
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
 const createDepartment = async () => {
-    const departments = [
-        { departmentTitle: 'FOH' },
-        { departmentTitle: 'BOH' }
-    ]
+    const departments = []
 
     await Department.insertMany(departments)
     console.log('Created departments!')
