@@ -7,7 +7,7 @@ const inventoryList = async () => {
     const inventoryLists = []
 
     await InventoryList.insertOne(inventoryLists)
-    console.log('Created InventoryLists!')
+    console.log('Created Inventory Lists!')
 }
 
 const run = async () => {

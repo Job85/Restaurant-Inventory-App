@@ -5,7 +5,7 @@ const DepartmentSchema = require('./inventoryList')
 
 const Item = mongoose.model('Item', ItemSchema)
 const InventoryList = mongoose.model('InventoryList', InventoryListSchema)
-const Department = mongoose.model('Item', DepartmentSchema)
+const Department = mongoose.model('Department', DepartmentSchema)
 
 module.exports = {
     Item,

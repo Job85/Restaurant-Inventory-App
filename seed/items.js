@@ -7,7 +7,7 @@ const main = async () => {
     const items = []
 
     await Item.insertOne(items)
-    console.log('Created Items!')
+    console.log('Created An Item!')
 }
 
 const run = async () => {
