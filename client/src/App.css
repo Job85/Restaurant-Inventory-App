@@ -17,3 +17,13 @@
   color: #61dafb;
 }
 
+.item-card-span {
+  margin-right: .5rem;
+  /* border-color: cyan;
+  border-width: 1px; */
+}
+
+.item-card {
+  margin-left: 15em;
+  text-align: left;
+}
