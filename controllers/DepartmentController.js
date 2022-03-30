@@ -1,5 +1,5 @@
-const db = require('../db')
-const { Department, InventoryList, Item } = require('../models')
+// const db = require('../db')
+const { Department } = require('../models')
 
 const getDepartment = async (req, res) => {
     let gotDepartment = await Department.find({})
@@ -8,9 +8,11 @@ const getDepartment = async (req, res) => {
 }
 
 const postDepartment = async (req, res) => {
-    let postedDepartment = await Department.insertMany({})
-    console.log('can we Department.insertOne?')
-    res.send(postedDepartment)
+    const department = new Department(
+        req.body
+    )
+    await department.save()
+    res.send(department)
 }
 
 const putDepartment = async (req, res) => {

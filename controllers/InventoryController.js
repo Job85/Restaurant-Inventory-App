@@ -1,5 +1,5 @@
 const db = require('../db')
-const { Inventory, Item } = require('../models')
+const { Inventory } = require('../models')
 
 const getInventory = async (req, res) => {
     let gotInventory = await Inventory.find({})
@@ -7,9 +7,11 @@ const getInventory = async (req, res) => {
     res.send(gotInventory)
 }
 const postInventory = async (req, res) => {
-    let postedInventory = await Inventory.insertMany({})
-    console.log('postedInventory')
-    res.send(postedInventory)
+    const inventory = new Inventory(
+        req.body
+    )
+    await inventory.save()
+    res.send(inventory)
 }
 
 const putInventory = async (req, res) => {

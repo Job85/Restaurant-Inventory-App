@@ -6,7 +6,7 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 const main = async () => {
     const items = []
 
-    await Item.insertOne(items)
+    await Item.create(items)
     console.log('Created An Item!')
 }
 
