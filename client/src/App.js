@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom'
 import './App.css';
+import Home from './components/Home';
+import axios from 'axios'
 
-function App() {
+const App = () => {
+  let [items, updateItems] = useState([])
+  const getItems = async () => {
+    let retrievedItems = await axios.get('http://localhost:3001/items')
+    return retrievedItems
+  }
+  useEffect(async () => {
+    let items = await getItems()
+    updateItems(items.data)
+  }, [])
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
       </header>
+      <main>
+        <Routes>
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </main>
     </div>
-  );
+  )
 }
 
 export default App;
