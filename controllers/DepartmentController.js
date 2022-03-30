@@ -1,4 +1,4 @@
-// const db = require('../db')
+const db = require('../db')
 const { Department } = require('../models')
 
 const getDepartment = async (req, res) => {
