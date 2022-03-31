@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Items from './components/Items';
 import Create from './components/Create';
+import axios from 'axios';
 
 const App = () => {
   let [newItem, setNewItem] = useState({
@@ -19,9 +20,11 @@ const App = () => {
     setNewItem({ ...newItem, [e.target.name]: e.target.value })
   }
 
-  // const handleSubmit = (e) => {
-  //   let addItem = e.target.onSubmit;
-  // }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let postItem = axios.post('http://localhost:3001/items', newItem)
+    return postItem
+  }
 
   return (
     <div className="App">
@@ -30,7 +33,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
-          <Route path='Create' element={<Create newItem={newItem} handleChange={handleChange} />} />
+          <Route path='Create' element={<Create newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
         </Routes>
       </main>
     </div>

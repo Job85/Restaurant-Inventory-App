@@ -8,7 +8,7 @@ const Create = (props) => {
                 Lets create an item!
             </h2>
             <div>
-                <form>
+                <form onSubmit={props.handleSubmit}>
                     <ul className='create-card'>
                         <ul>
                             <label id='location'>Location:</label>
