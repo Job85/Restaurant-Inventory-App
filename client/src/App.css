@@ -27,3 +27,17 @@
   margin-left: 15em;
   text-align: left;
 }
+
+.label-form {
+  width: 15%;
+}
+
+.create-card {
+  display: grid;
+  grid-template-rows: repeat(5, 1fr);
+  
+}
+/* label {
+  display: grid;
+  grid-template-rows: auto;
+} */

@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
 import Items from './components/Items';
+import Create from './components/Create';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
+          <Route path='Create' element={<Create />} />
         </Routes>
       </main>
     </div>
