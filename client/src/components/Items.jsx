@@ -25,7 +25,7 @@ const Items = () => {
                             <span className='item-card-span'> Category:{item.category}</span>
                             <span className='item-card-span'> Item:{item.item}</span>
                             <span className='item-card-span'>Size:{item.size}</span>
-                            <span className='item-card-span'>Count:{item.count}</span>
+                            <span className='count-span'>Count:{item.count}</span>
                         </li>
                     ))}
             </div>
