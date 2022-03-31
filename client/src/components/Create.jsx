@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-// import axios from 'axios'
+// import axios from 'axios';
+// import { response } from 'express';
 // import { handle } from 'express/lib/application';
 
 const Create = () => {
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log('You clicked submit');
-    }
     // let [items, postedItems] = useState([])
     // const postItems = async () => {
     //     let postingItems = await axios
@@ -27,6 +24,7 @@ const Create = () => {
     //     let items = await postItems()
     //     postedItems(items.data)
     // }, [])
+
     return (
         <div className='create'>
             <h1>Create Page</h1>
@@ -34,7 +32,7 @@ const Create = () => {
                 Lets create an item!
             </h2>
             <div>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <ul className='create-card'>
                         <ul>
                             <label id='location'>Location:</label>
@@ -57,8 +55,8 @@ const Create = () => {
                             <input type='number' placeholder='count' className='label-form' />
                         </ul>
                     </ul>
-                    {/* <button type='submit'>Submit</button> */}
-                    <input type="submit" value='Submit' />
+                    {/* <button onClick={postItems}>Create Item</button> */}
+                    {/* <input type="submit" value='Submit' /> */}
                 </form>
             </div>
         </div >

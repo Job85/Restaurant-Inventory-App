@@ -22,19 +22,19 @@ app.get('/', (req, res) => {
 })
 app.get('/department', departmentController.getDepartment)
 app.get('/inventory', inventoryController.getInventory)
-app.get('/item/', itemController.getItem)
+app.get('/items', itemController.getItem)
 
 app.post('/department', departmentController.postDepartment)
 app.post('/inventory', inventoryController.postInventory)
-app.post('/item', itemController.postItem)
+app.post('/items', itemController.postItem)
 
 app.put('/department', departmentController.putDepartment)
 app.put('/inventory', inventoryController.putInventory)
-app.put('/item', itemController.putItem)
+app.put('/items', itemController.putItem)
 
 app.delete('/department', departmentController.deleteDepartment)
 app.delete('/inventory', inventoryController.deleteInventory)
-app.delete('/item', itemController.deleteItem)
+app.delete('/items', itemController.deleteItem)
 
 // app.get('/*', (req, res) => {
 //     res.sendFile(`${__dirname}/client/build/index.html`)
