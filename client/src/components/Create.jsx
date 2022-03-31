@@ -15,39 +15,48 @@ const Create = (props) => {
                             <input type='text'
                                 defaultValue={props.newItem.location}
                                 onChange={props.handleChange}
+                                name='location'
                                 placeholder={'location'}
                                 className='label-form' />
                         </ul>
-                        {/* <ul>
-                            <label id='category'> Category:</label>
+                        <ul>
+                            <label id='category'>Category:</label>
                             <input type='text'
-                                value={props.newItem.category}
+                                defaultValue={props.newItem.category}
+                                onChange={props.handleChange}
+                                name='category'
                                 placeholder={'category'}
                                 className='label-form' />
                         </ul>
                         <ul>
                             <label id='item'>Item:</label>
                             <input type='text'
-                                value={props.newItem.item}
+                                defaultValue={props.newItem.item}
+                                onChange={props.handleChange}
+                                name='item'
                                 placeholder={'item'}
                                 className='label-form' />
                         </ul>
                         <ul>
                             <label id='size'>Size:</label>
                             <input type='text'
-                                value={props.newItem.size}
+                                defaultValue={props.newItem.size}
+                                onChange={props.handleChange}
+                                name='size'
                                 placeholder={'size'}
                                 className='label-form' />
                         </ul>
                         <ul>
                             <label id='count'>Count:</label>
-                            <input type='number'
-                                value={props.newItem.Category}
+                            <input type='text'
+                                defaultValue={props.newItem.count}
+                                onChange={props.handleChange}
+                                name='count'
                                 placeholder={'count'}
                                 className='label-form' />
-                        </ul> */}
+                        </ul>
                     </ul>
-                    <button>Create Item</button>
+                    <button type="submit">Create Item</button>
                 </form>
             </div>
         </div >
