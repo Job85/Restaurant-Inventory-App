@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Items from './components/Items';
 import Create from './components/Create';
+import Edit from './components/Edit';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
           <Route path='Create' element={<Create />} />
+          <Route path='Edit' element={<Edit />} />
         </Routes>
       </main>
     </div>
