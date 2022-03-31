@@ -9,7 +9,6 @@ const Nav = () => {
                 <Link to='/'>Home</Link>
                 <Link to='Items'>Items</Link>
                 <Link to='Create'>Create</Link>
-                <Link to='Edit'>Create</Link>
             </div>
         </nav>
     )
