@@ -27,32 +27,66 @@ const ItemDetails = (props) => {
         <div className='items'>
             <h1>Edit Items</h1>
             <div className='itemContainer'>
-                {
-                    items.map((item, i) => (
-                        <li className='item-card' key={i}>
-                            <span className='item-card-span'>Location:{item.location}</span>
-                            <span className='item-card-span'> Category:{item.category}</span>
-                            <span className='item-card-span'> Item:{item.item}</span>
-                            <span className='item-card-span'>Size:{item.size}</span>
-                            <span className='count-span'>Count:{item.count}</span>
-                            <div id='buttonContainer'>
-                                <form onSubmit={props.handleEdit}>
-                                    <button id='editButton'>Edit</button>
-                                </form>
-                                <form onSubmit={props.handleDelete}>
-                                    <button id='deleteButton' type='submit'>Delete</button>
-                                </form>
-                                <form onSubmit={props.handleSave}>
-                                    <button id='saveButton'>Save</button>
-                                </form>
-                            </div>
-                        </li>
-                    ))}
+
+                <div className='edit-card'>
+                    <ul>
+                        <label id='location'>Location:</label>
+                        <input type='text'
+                            defaultValue={props.setNewItem.location}
+                            onChange={props.handleChange}
+                            name='location'
+                            placeholder={'location'}
+                            className='label-form' />
+                    </ul>
+                    <ul>
+                        <label id='category'>Category:</label>
+                        <input type='text'
+                            defaultValue={props.setNewItem.category}
+                            onChange={props.handleChange}
+                            name='category'
+                            placeholder={'category'}
+                            className='label-form' />
+                    </ul>
+                    <ul>
+                        <label id='item'>Item:</label>
+                        <input type='text'
+                            defaultValue={props.setNewItem.item}
+                            onChange={props.handleChange}
+                            name='item'
+                            placeholder={'item'}
+                            className='label-form' />
+                    </ul>
+                    <ul>
+                        <label id='size'>Size:</label>
+                        <input type='text'
+                            defaultValue={props.setNewItem.size}
+                            onChange={props.handleChange}
+                            name='size'
+                            placeholder={'size'}
+                            className='label-form' />
+                    </ul>
+                    <ul>
+                        <label id='count'>Count:</label>
+                        <input type='text'
+                            defaultValue={props.setNewItem.count}
+                            onChange={props.handleChange}
+                            name='count'
+                            placeholder={'count'}
+                            className='label-form' />
+                    </ul>
+                    <form onSubmit={props.handleEdit}>
+                        <button id='editButton'>Edit</button>
+                    </form>
+                    <form onSubmit={props.handleDelete}>
+                        <button id='deleteButton' type='submit'>Delete</button>
+                    </form>
+                    <form onSubmit={props.handleSave}>
+                        <button id='saveButton'>Save</button>
+                    </form>
+                </div>
             </div>
         </div>
     )
 }
-
-// onEdit={props.editItem.handleEdit}
 
 export default ItemDetails
