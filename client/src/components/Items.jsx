@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
-const Items = (props) => {
+const Items = () => {
     let [items, updateItems] = useState([])
     const getItems = async () => {
         let retrievedItems = await axios.get('http://localhost:3001/items')
@@ -28,7 +29,7 @@ const Items = (props) => {
                             <span className='item-card-span'> Item:{item.item}</span>
                             <span className='item-card-span'>Size:{item.size}</span>
                             <span className='count-span'>Count:{item.count}</span>
-                            <button id='editButton'>Edit</button>
+                            <Link to='Edit'>Edit</Link>
                         </li>
                     ))}
             </div>

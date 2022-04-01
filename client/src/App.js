@@ -34,18 +34,25 @@ const App = () => {
     size: '',
     count: ''
   })
-
+  // handleEdit function passed in props to Edit.jsx
   const handleEdit = (e) => {
     e.preventDefault();
     setEdit({ ...editItem, [e.target.name]: e.target.value })
-    console.log('button clicked')
     return
   }
+  // handleSave function passed in props to Edit.jsx
+  const handleSave = (e) => {
+    e.preventDefault();
+    let editItem = axios.put('http://localhost:3001/items')
+    return editItem
+  }
+  // handleDelete function passed in props to Edit.jsx
+  const handleDelete = (e) => {
+    e.preventDefault();
+    let deleteItem = axios.delete('http://localhost:3001/items')
+    return deleteItem
+  }
 
-  // const handleDelete = (e) => {
-
-  // }
-  // handleClick={handleClick}
   return (
     <div className="App">
       <Header />
@@ -54,7 +61,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
           <Route path='Create' element={<Create newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='Items/:id' element={<Edit setNewItem={setNewItem} editItem={editItem} handleEdit={handleEdit} />} />
+          <Route path='Items/:id' element={<Edit handleEdit={handleEdit} handleDelete={handleDelete} handleSave={handleSave} />} />
         </Routes>
       </main>
     </div>
@@ -62,3 +69,7 @@ const App = () => {
 }
 
 export default App;
+
+
+
+// setNewItem={setNewItem} editItem={editItem} handleEdit={handleEdit} 
