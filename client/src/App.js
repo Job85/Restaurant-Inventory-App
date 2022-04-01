@@ -9,7 +9,7 @@ import Edit from './components/ItemDetails';
 import axios from 'axios';
 
 const App = () => {
-  // hook to populate new items in Items.jsx
+  // hook to populate new items in Create.jsx
   let [newItem, setNewItem] = useState({
     location: '',
     category: '',
@@ -21,14 +21,14 @@ const App = () => {
   const handleChange = (e) => {
     setNewItem({ ...newItem, [e.target.name]: e.target.value })
   }
-  // event handler passed as prop to submit new items in Items.jsx
+  // event handler passed as prop to submit new items in Create.jsx
   const handleSubmit = (e) => {
     e.preventDefault();
     let postItem = axios.post('http://localhost:3001/items', newItem)
     return postItem
   }
 
-  //hook to populate item to edit in ItemDetails.jsx (currently not working properly)
+  //hook to populate item to edit in ItemDetails.jsx how to grab item.id?
   let [editItem, setEdit] = useState({
     location: '',
     category: '',
@@ -36,12 +36,13 @@ const App = () => {
     size: '',
     count: ''
   })
-  // event handler passed as prop to ItemDetails.jsx
+
   const handleEdit = (e) => {
     e.preventDefault();
     setEdit({ ...editItem, [e.target.name]: e.target.value })
     return
   }
+
   // handleSave function passed in props to ItemDetails.jsx
   const handleSave = (e) => {
     e.preventDefault();

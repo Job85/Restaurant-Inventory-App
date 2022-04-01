@@ -16,7 +16,7 @@ const postItem = async (req, res) => {
 }
 
 const putItem = async (req, res) => {
-    let putsItem = await Item.findOneAndUpdate({})
+    let putsItem = await Item.updateOne({})
     console.log('putsItem')
     res.send(putsItem)
 }

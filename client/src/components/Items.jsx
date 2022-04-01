@@ -21,7 +21,7 @@ const Items = () => {
                 Welcome to Items Page!
             </h2>
             <div className='item-container'>
-                {
+                { // I don't know what's going on with these curly braces here?!?
                     items.map((item, i) => (
                         <li className='item-card' key={i}>
                             <span className='item-card-span'>Location:{item.location}</span>
@@ -31,7 +31,8 @@ const Items = () => {
                             <span className='count-span'>Count:{item.count}</span>
                             <Link to='Edit'>Edit</Link>
                         </li>
-                    ))}
+                    ))
+                }
             </div>
         </div>
     )
