@@ -1,6 +1,5 @@
 const Create = (props) => {
 
-
     return (
         <div className='create'>
             <h1>Create Page</h1>

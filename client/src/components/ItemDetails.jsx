@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 
-const Items = (props) => {
+
+const ItemDetails = (props) => {
     let [items, updateItems] = useState([])
     const getItems = async () => {
         let retrievedItems = await axios.get('http://localhost:3001/items')
@@ -15,10 +16,7 @@ const Items = (props) => {
 
     return (
         <div className='items'>
-            <h1>Items Page</h1>
-            <h2>
-                Welcome to Items Page!
-            </h2>
+            <h1>Edit Items</h1>
             <div className='item-container'>
                 {
                     items.map((item, i) => (
@@ -28,7 +26,9 @@ const Items = (props) => {
                             <span className='item-card-span'> Item:{item.item}</span>
                             <span className='item-card-span'>Size:{item.size}</span>
                             <span className='count-span'>Count:{item.count}</span>
-                            <button id='editButton'>Edit</button>
+                            <button id='editButton' onEdit={props.editItem.handleEdit}>Edit</button>
+                            <button>Delete</button>
+                            <button type='submit'>Save</button>
                         </li>
                     ))}
             </div>
@@ -36,4 +36,4 @@ const Items = (props) => {
     )
 }
 
-export default Items
+export default ItemDetails

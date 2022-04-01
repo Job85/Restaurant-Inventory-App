@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Items from './components/Items';
 import Create from './components/Create';
+import Edit from './components/ItemDetails';
 import axios from 'axios';
 
 const App = () => {
@@ -26,6 +27,25 @@ const App = () => {
     return postItem
   }
 
+  let [editItem, setEdit] = useState({
+    location: '',
+    category: '',
+    item: '',
+    size: '',
+    count: ''
+  })
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+    setEdit({ ...editItem, [e.target.name]: e.target.value })
+    console.log('button clicked')
+    return
+  }
+
+  // const handleDelete = (e) => {
+
+  // }
+  // handleClick={handleClick}
   return (
     <div className="App">
       <Header />
@@ -34,6 +54,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
           <Route path='Create' element={<Create newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
+          <Route path='Items/:id' element={<Edit setNewItem={setNewItem} editItem={editItem} handleEdit={handleEdit} />} />
         </Routes>
       </main>
     </div>
