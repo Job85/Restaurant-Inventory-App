@@ -7,6 +7,12 @@ const getItem = async (req, res) => {
     res.send(gotItem)
 }
 
+const getItemById = async (req, res) => {
+    let gotItemById = await Item.find({ 'id': '' })
+    console.log('Got Item By Id')
+    res.send(gotItemById)
+}
+
 const postItem = async (req, res) => {
     const item = new Item(
         req.body
@@ -29,6 +35,7 @@ const deleteItem = async (req, res) => {
 
 module.exports = {
     getItem,
+    getItemById,
     postItem,
     putItem,
     deleteItem

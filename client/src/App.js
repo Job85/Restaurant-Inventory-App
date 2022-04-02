@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Items from './components/Items';
 import Create from './components/Create';
 import Edit from './components/ItemDetails';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const App = () => {
@@ -29,19 +30,26 @@ const App = () => {
   }
 
   //hook to populate item to edit in ItemDetails.jsx how to grab item.id?
-  let [editItem, setEdit] = useState({
-    location: '',
-    category: '',
-    item: '',
-    size: '',
-    count: ''
-  })
+  // let [editItem, setEdit] = useState({
+  //   location: '',
+  //   category: '',
+  //   item: '',
+  //   size: '',
+  //   count: ''
+  // })
+  // let { id } = useParams()
 
-  const handleEdit = (e) => {
-    e.preventDefault();
-    setEdit({ ...editItem, [e.target.name]: e.target.value })
-    return
-  }
+  // useEffect(() => {
+  //   let changedItem = items.find(
+  //     (item) => item.id === parseInt(id)
+  //   )
+  //   setEdit(changedItem)
+  // }, [item, id])
+  // const handleEdit = (e) => {
+  //   e.preventDefault();
+  //   setEdit({ ...editItem, [e.target.name]: e.target.value })
+  //   return
+  // }
 
   // handleSave function passed in props to ItemDetails.jsx
   const handleSave = (e) => {
@@ -64,7 +72,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
           <Route path='Create' element={<Create newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='Items/:id' element={<Edit setNewItem={setNewItem} handleEdit={handleEdit} handleDelete={handleDelete} handleSave={handleSave} />} />
+          <Route path='Items/:id' element={<Edit setNewItem={setNewItem} handleDelete={handleDelete} handleSave={handleSave} />} />
         </Routes>
       </main>
     </div>
