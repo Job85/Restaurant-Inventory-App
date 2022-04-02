@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -23,10 +23,14 @@ const App = () => {
     setNewItem({ ...newItem, [e.target.name]: e.target.value })
   }
   // event handler passed as prop to submit new items in Create.jsx
+
+  let navigate = useNavigate()
+
   const handleSubmit = (e) => {
     e.preventDefault();
     let postItem = axios.post('http://localhost:3001/items', newItem)
-    return postItem
+    navigate('/Items')
+    // return postItem
   }
 
   //hook to populate item to edit in ItemDetails.jsx how to grab item.id?

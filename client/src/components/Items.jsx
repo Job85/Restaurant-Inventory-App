@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom'
 
-const Items = (props) => {
+const Items = () => {
     let [items, updateItems] = useState([])
     const getItems = async () => {
         let retrievedItems = await axios.get('http://localhost:3001/items')
@@ -13,7 +13,7 @@ const Items = (props) => {
         updateItems(items.data)
     }, [])
 
-    let navigate = useNavigate()
+    // let navigate = useNavigate
 
     return (
         <div className='items'>
@@ -30,8 +30,8 @@ const Items = (props) => {
                             <span className='item-card-span'> Item:{item.item}</span>
                             <span className='item-card-span'>Size:{item.size}</span>
                             <span className='count-span'>Count:{item.count}</span>
-                            <Link to={`Edit/${item.id}`}>Edit
-                                <div className='itemCard' key={item.id}>
+                            <Link to='Edit'>Edit
+                                <div>
 
                                 </div>
                             </Link>
@@ -44,3 +44,5 @@ const Items = (props) => {
 }
 
 export default Items
+
+{/* <Link to={`Items/Edit/${item.id}`}>Edit */ }

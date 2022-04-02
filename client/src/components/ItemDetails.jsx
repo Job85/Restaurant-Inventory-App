@@ -22,14 +22,14 @@ const ItemDetails = (props) => {
         size: '',
         count: ''
     })
-    // let { id } = useParams()
+    let { id } = useParams()
 
-    // useEffect(() => {
-    //     let changedItem = items.find(
-    //         (item) => item.id === parseInt(id)
-    //     )
-    //     setEdit(changedItem)
-    // }, [items, id])
+    useEffect(() => {
+        let changedItem = items.find(
+            (item) => item.id === parseInt(id)
+        )
+        setEdit(changedItem)
+    }, [items, id])
     const handleEdit = (e) => {
         e.preventDefault();
         setEdit({ ...editItem, [e.target.name]: e.target.value })

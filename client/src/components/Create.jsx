@@ -14,7 +14,7 @@ const Create = (props) => {
                             <input type='text'
                                 defaultValue={props.newItem.location}
                                 onChange={props.handleChange}
-                                name='location'
+                                name={'location'}
                                 placeholder={'location'}
                                 className='label-form' />
                         </ul>
@@ -23,7 +23,7 @@ const Create = (props) => {
                             <input type='text'
                                 defaultValue={props.newItem.category}
                                 onChange={props.handleChange}
-                                name='category'
+                                name={'category'}
                                 placeholder={'category'}
                                 className='label-form' />
                         </ul>
@@ -32,7 +32,7 @@ const Create = (props) => {
                             <input type='text'
                                 defaultValue={props.newItem.item}
                                 onChange={props.handleChange}
-                                name='item'
+                                name={'item'}
                                 placeholder={'item'}
                                 className='label-form' />
                         </ul>
@@ -41,7 +41,7 @@ const Create = (props) => {
                             <input type='text'
                                 defaultValue={props.newItem.size}
                                 onChange={props.handleChange}
-                                name='size'
+                                name={'size'}
                                 placeholder={'size'}
                                 className='label-form' />
                         </ul>
@@ -50,7 +50,7 @@ const Create = (props) => {
                             <input type='text'
                                 defaultValue={props.newItem.count}
                                 onChange={props.handleChange}
-                                name='count'
+                                name={'count'}
                                 placeholder={'count'}
                                 className='label-form' />
                         </ul>
