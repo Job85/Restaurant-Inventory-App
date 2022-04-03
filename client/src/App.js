@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header';
+import Nav from './components/Nav';
 import Home from './components/Home';
 import Items from './components/Items';
-import Create from './components/Create';
-import Edit from './components/ItemDetails';
-import { useParams } from 'react-router-dom';
+import ItemForm from './components/ItemForm';
+import ItemDetails from './components/ItemDetails';
 import axios from 'axios';
 
 const App = () => {
-  // hook to populate new items in Create.jsx
+  // hook to populate new items in ItemForm.jsx
   let [newItem, setNewItem] = useState({
     location: '',
     category: '',
@@ -22,33 +21,15 @@ const App = () => {
   const handleChange = (e) => {
     setNewItem({ ...newItem, [e.target.name]: e.target.value })
   }
-  // event handler passed as prop to submit new items in Create.jsx
-
-  let navigate = useNavigate()
-
+  // event handler passed as prop to submit new items in ItemForm.jsx
   const handleSubmit = (e) => {
     e.preventDefault();
     let postItem = axios.post('http://localhost:3001/items', newItem)
-    navigate('/Items')
-    // return postItem
+    return postItem
   }
 
   //hook to populate item to edit in ItemDetails.jsx how to grab item.id?
-  // let [editItem, setEdit] = useState({
-  //   location: '',
-  //   category: '',
-  //   item: '',
-  //   size: '',
-  //   count: ''
-  // })
-  // let { id } = useParams()
 
-  // useEffect(() => {
-  //   let changedItem = items.find(
-  //     (item) => item.id === parseInt(id)
-  //   )
-  //   setEdit(changedItem)
-  // }, [item, id])
   // const handleEdit = (e) => {
   //   e.preventDefault();
   //   setEdit({ ...editItem, [e.target.name]: e.target.value })
@@ -58,8 +39,8 @@ const App = () => {
   // handleSave function passed in props to ItemDetails.jsx
   const handleSave = (e) => {
     e.preventDefault();
-    let editItem = axios.put('http://localhost:3001/items')
-    return editItem
+    let saveItem = axios.put('http://localhost:3001/items')
+    return saveItem
   }
   // handleDelete function passed in props to ItemDetails.jsx
   const handleDelete = (e) => {
@@ -70,13 +51,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
+      <Nav />
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='Items' element={<Items />} />
-          <Route path='Create' element={<Create newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='Items/:id' element={<Edit setNewItem={setNewItem} handleDelete={handleDelete} handleSave={handleSave} />} />
+          <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
+          <Route path='Items/:id' element={<ItemDetails setNewItem={setNewItem} handleDelete={handleDelete} handleSave={handleSave} />} />
         </Routes>
       </main>
     </div>

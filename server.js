@@ -20,25 +20,24 @@ app.use(logger('dev'))
 app.get('/', (req, res) => {
     res.send({ msg: 'Server Running ' })
 })
-app.get('/department', departmentController.getDepartment)
-app.get('/inventory', inventoryController.getInventory)
+
 app.get('/items', itemController.getItem)
 app.get(`/items:id`, itemController.getItemById)
-
-app.post('/department', departmentController.postDepartment)
-app.post('/inventory', inventoryController.postInventory)
 app.post('/items', itemController.postItem)
-// app.post(`/items`, itemController.postItemById)
-
-app.put('/department', departmentController.putDepartment)
-app.put('/inventory', inventoryController.putInventory)
 app.put('/items', itemController.putItem)
-// app.put(`/items`, itemController.putItemById)
-
-app.delete('/department', departmentController.deleteDepartment)
-app.delete('/inventory', inventoryController.deleteInventory)
 app.delete('/items', itemController.deleteItem)
 // app.delete(`/items`, itemController.deleteItemById)
+
+app.get('/inventory', inventoryController.getInventory)
+app.post('/inventory', inventoryController.postInventory)
+app.put('/inventory', inventoryController.putInventory)
+app.delete('/inventory', inventoryController.deleteInventory)
+
+app.get('/department', departmentController.getDepartment)
+app.post('/department', departmentController.postDepartment)
+app.put('/department', departmentController.putDepartment)
+app.delete('/department', departmentController.deleteDepartment)
+
 
 app.get('/*', (req, res) => {
     res.sendFile(`${__dirname}/client/build/index.html`)

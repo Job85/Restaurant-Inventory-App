@@ -1,4 +1,4 @@
-const Create = (props) => {
+const ItemForm = (props) => {
 
     return (
         <div className='create'>
@@ -55,11 +55,11 @@ const Create = (props) => {
                                 className='label-form' />
                         </ul>
                     </ul>
-                    <button type="submit">Create Item</button>
+                    <button type="submit">Add Item</button>
                 </form>
             </div>
         </div >
     )
 }
 
-export default Create
+export default ItemForm
