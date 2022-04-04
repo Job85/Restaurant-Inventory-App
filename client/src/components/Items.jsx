@@ -14,20 +14,6 @@ const Items = (props) => {
         setItems(items.data)
     }, [])
 
-
-    // const handleUpdate = (e, id) => {
-    //     // e.preventDefault();
-    //     let editItem = axios.get(`http://localhost:3001/items/${id}`)
-    //     console.log(editItem)
-    //     return editItem
-    // }
-
-
-    // const { setItem } = useContext(Context);
-    // const handleChange = (id) => {
-    //     setItem(id);
-    // };
-
     return (
         <div className='items'>
             <h1>Items List</h1>

@@ -23,10 +23,17 @@ const postItem = async (req, res) => {
 }
 
 const putItem = async (req, res) => {
-    let putsItem = await Item.updateOne({ 'id': '' })
-    console.log('putsItem')
-    res.send(putsItem)
+    const item = set(
+        req.body
+    )
+    await item.save()
+    res.send(item)
 }
+// const putItem = async (req, res) => {
+//     let putsItem = await Item.updateOne()
+//     console.log('putsItem')
+//     res.send(putsItem)
+// }
 
 const deleteItemById = async (req, res) => {
     let deletedItem = await Item.findOneAndRemove({ _id: req.params.id })

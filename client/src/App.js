@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
 import Home from './components/Home';
@@ -30,14 +30,6 @@ const App = () => {
     return postItem
   }
 
-  //hook to populate item to edit in ItemDetails.jsx how to grab item.id?
-
-  // const handleEdit = (e) => {
-  //   e.preventDefault();
-  //   setEdit({ ...editItem, [e.target.name]: e.target.value })
-  //   return
-  // }
-
   const handleUpdate = (id) => {
     let editItem = axios.get(`http://localhost:3001/items/${id}`)
     console.log(editItem)
@@ -45,11 +37,8 @@ const App = () => {
   }
 
   // handleSave function passed in props to ItemDetails.jsx
-  const handleSave = (e) => {
-    e.preventDefault();
-    let saveItem = axios.put('http://localhost:3001/items')
-    return saveItem
-  }
+
+
 
 
   return (
@@ -60,7 +49,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
           <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='/items/:id' element={<ItemDetails setNewItem={setNewItem} handleSave={handleSave} />} />
+          <Route path='/items/:id' element={<ItemDetails setNewItem={setNewItem} />} />
         </Routes>
       </main>
     </div>

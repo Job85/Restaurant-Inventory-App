@@ -27,17 +27,26 @@ const ItemDetails = (props) => {
 
     }
 
+    const handleSubmit = async (id) => {
+        // let putItem = 
+        await axios.put(`http://localhost:3001/putitem/`)
+
+        // console.log(putItem)
+        // return putItem
+        //    .then(
+        //    () => navigate('/items')
+        //     )
+    }
+
     return (
         <div className='items'>
             <h1>Item Details</h1>
             <div className='editContainer'>
-
                 <div className='edit-card'>
                     <li className='item-card'>
                         <span>
                             <label>Location:</label>
                             <input type='text'
-                                defaultValue={`${retrievedItem.location}`}
                                 onChange={props.handleChange}
                                 name={'location'}
                                 placeholder={`${retrievedItem.location}`}
@@ -48,7 +57,6 @@ const ItemDetails = (props) => {
                         <span>
                             <label>Category:</label>
                             <input type='text'
-                                defaultValue={`${retrievedItem.category}`}
                                 onChange={props.handleChange}
                                 name={'category'}
                                 placeholder={`${retrievedItem.category}`}
@@ -59,28 +67,41 @@ const ItemDetails = (props) => {
                         <span>
                             <label>Item:</label>
                             <input type='text'
-                                defaultValue={`${retrievedItem.item}`}
                                 onChange={props.handleChange}
                                 name={'item'}
                                 placeholder={`${retrievedItem.item}`}
                                 className='edit-form' />
                         </span>
                     </li>
-                    <span className='item-card-span'> Category:{retrievedItem.category}</span>
-                    <span className='item-card-span'> Item:{retrievedItem.item}</span>
-                    <span className='item-card-span'>Size:{retrievedItem.size}</span>
-                    <span className='count-span'>Count:{retrievedItem.count}</span>
+                    <li className='item-card'>
+                        <span>
+                            <label>Size:</label>
+                            <input type='text'
+                                onChange={props.handleChange}
+                                name={'size'}
+                                placeholder={`${retrievedItem.size}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Count:</label>
+                            <input type='text'
+                                onChange={props.handleChange}
+                                name={'count'}
+                                placeholder={`${retrievedItem.count}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
                     <div>
                         <button id='editButton'>Edit</button>
                     </div>
                     <div onClick={() => handleDelete(retrievedItem._id)}>
                         <button id='deleteButton' type='submit'>Delete</button>
                     </div>
-                    <div>
-                        <button id='saveButton'>Save</button>
+                    <div onClick={() => handleSubmit(retrievedItem)}>
+                        <button id='saveButton' type='submit'>Save</button>
                     </div>
-
-                    {/* )} */}
                 </div>
             </div>
         </div >
