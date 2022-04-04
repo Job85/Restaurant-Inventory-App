@@ -8,7 +8,8 @@ const getItem = async (req, res) => {
 }
 
 const getItemById = async (req, res) => {
-    let gotItemById = await Item.find({ 'id': '' })
+    console.log(req)
+    let gotItemById = await Item.find({ _id: req.params.id })
     console.log('Got Item By Id')
     res.send(gotItemById)
 }
@@ -22,13 +23,13 @@ const postItem = async (req, res) => {
 }
 
 const putItem = async (req, res) => {
-    let putsItem = await Item.updateOne({})
+    let putsItem = await Item.updateOne({ 'id': '' })
     console.log('putsItem')
     res.send(putsItem)
 }
 
-const deleteItem = async (req, res) => {
-    let deletedItem = await Item.findOneAndRemove({})
+const deleteItemById = async (req, res) => {
+    let deletedItem = await Item.findOneAndRemove({ _id: req.params.id })
     console.log('deletedItem')
     res.send(deletedItem)
 }
@@ -38,5 +39,5 @@ module.exports = {
     getItemById,
     postItem,
     putItem,
-    deleteItem
+    deleteItemById
 }

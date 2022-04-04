@@ -1,49 +1,89 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 
 
 const ItemDetails = (props) => {
-    let [items, updateItems] = useState([])
-    const getItems = async () => {
-        let retrievedItems = await axios.get('http://localhost:3001/items')
-        return retrievedItems
+    let navigate = useNavigate()
+
+    let [retrievedItem, updateItem] = useState([])
+    let { id } = useParams()
+    let getItem = async () => {
+        let pendingItem = await axios.get(`http://localhost:3001/items/${id}`)
+        return pendingItem
     }
     useEffect(async () => {
-        let items = await getItems()
-        updateItems(items.data)
-        console.log(items.data)
+        let item = await getItem()
+        console.log(item)
+        updateItem(item.data[0])
     }, [])
 
 
+
+    const handleDelete = async (id) => {
+        await axios.delete(`http://localhost:3001/deleteitem/${id}`).then(
+            () => navigate('/items')
+        )
+
+    }
+
     return (
         <div className='items'>
-            <h1>Edit Items</h1>
+            <h1>Item Details</h1>
             <div className='editContainer'>
 
                 <div className='edit-card'>
+                    <li className='item-card'>
+                        <span>
+                            <label>Location:</label>
+                            <input type='text'
+                                defaultValue={`${retrievedItem.location}`}
+                                onChange={props.handleChange}
+                                name={'location'}
+                                placeholder={`${retrievedItem.location}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Category:</label>
+                            <input type='text'
+                                defaultValue={`${retrievedItem.category}`}
+                                onChange={props.handleChange}
+                                name={'category'}
+                                placeholder={`${retrievedItem.category}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Item:</label>
+                            <input type='text'
+                                defaultValue={`${retrievedItem.item}`}
+                                onChange={props.handleChange}
+                                name={'item'}
+                                placeholder={`${retrievedItem.item}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <span className='item-card-span'> Category:{retrievedItem.category}</span>
+                    <span className='item-card-span'> Item:{retrievedItem.item}</span>
+                    <span className='item-card-span'>Size:{retrievedItem.size}</span>
+                    <span className='count-span'>Count:{retrievedItem.count}</span>
+                    <div>
+                        <button id='editButton'>Edit</button>
+                    </div>
+                    <div onClick={() => handleDelete(retrievedItem._id)}>
+                        <button id='deleteButton' type='submit'>Delete</button>
+                    </div>
+                    <div>
+                        <button id='saveButton'>Save</button>
+                    </div>
 
-                    {items.map((item, i) => (
-                        <li className='item-card' key={i}>
-                            <span className='item-card-span'>Location:{item.location}</span>
-                            <span className='item-card-span'> Category:{item.category}</span>
-                            <span className='item-card-span'> Item:{item.item}</span>
-                            <span className='item-card-span'>Size:{item.size}</span>
-                            <span className='count-span'>Count:{item.count}</span>
-                            <form onSubmit={props.handleEdit}>
-                                <button id='editButton'>Edit</button>
-                            </form>
-                            <form onSubmit={props.handleDelete}>
-                                <button id='deleteButton' type='submit'>Delete</button>
-                            </form>
-                            <form onSubmit={props.handleSave}>
-                                <button id='saveButton'>Save</button>
-                            </form>
-                        </li>
-                    ))}
+                    {/* )} */}
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

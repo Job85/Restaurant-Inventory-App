@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios'
-import ItemDetails from './ItemDetails';
-import { useParams, Link } from 'react-router-dom';
-const Items = () => {
+import { Link } from 'react-router-dom';
+
+const Items = (props) => {
     let [items, setItems] = useState([])
     const getItems = async () => {
         let retrievedItems = await axios.get('http://localhost:3001/items')
@@ -10,16 +10,23 @@ const Items = () => {
     }
     useEffect(async () => {
         let items = await getItems()
+        console.log(items)
         setItems(items.data)
     }, [])
 
-    let { id } = useParams()
 
-    const handleUpdate = (e) => {
-        e.preventDefault();
-        let editItem = axios.get(`http://localhost:3001/items${id}`)
-        return editItem
-    }
+    // const handleUpdate = (e, id) => {
+    //     // e.preventDefault();
+    //     let editItem = axios.get(`http://localhost:3001/items/${id}`)
+    //     console.log(editItem)
+    //     return editItem
+    // }
+
+
+    // const { setItem } = useContext(Context);
+    // const handleChange = (id) => {
+    //     setItem(id);
+    // };
 
     return (
         <div className='items'>
@@ -32,9 +39,11 @@ const Items = () => {
                         <span className='item-card-span'> Item:{item.item}</span>
                         <span className='item-card-span'>Size:{item.size}</span>
                         <span className='count-span'>Count:{item.count}</span>
-                        <button onClick={handleUpdate}>
-                            Update
-                        </button>
+                        <Link to={`/items/${item._id}`}>
+                            <button >
+                                Update
+                            </button>
+                        </Link>
                     </li>
                 ))}
             </div>
@@ -43,3 +52,11 @@ const Items = () => {
 }
 
 export default Items
+// onClick={handleChange(item._id)}
+// () => props.handleUpdate(this, item._id)
+
+    // let navigate = useNavigate()
+
+    // const showItem = (item) => {
+    //     navigate(`${item.id}`)
+    // }

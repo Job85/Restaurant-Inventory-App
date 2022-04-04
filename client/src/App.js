@@ -8,6 +8,8 @@ import ItemForm from './components/ItemForm';
 import ItemDetails from './components/ItemDetails';
 import axios from 'axios';
 
+export const Context = React.createContext({ value: null, setValue: () => { } });
+
 const App = () => {
   // hook to populate new items in ItemForm.jsx
   let [newItem, setNewItem] = useState({
@@ -36,18 +38,19 @@ const App = () => {
   //   return
   // }
 
+  const handleUpdate = (id) => {
+    let editItem = axios.get(`http://localhost:3001/items/${id}`)
+    console.log(editItem)
+    return editItem
+  }
+
   // handleSave function passed in props to ItemDetails.jsx
   const handleSave = (e) => {
     e.preventDefault();
     let saveItem = axios.put('http://localhost:3001/items')
     return saveItem
   }
-  // handleDelete function passed in props to ItemDetails.jsx
-  const handleDelete = (e) => {
-    e.preventDefault();
-    let deleteItem = axios.delete('http://localhost:3001/items')
-    return deleteItem
-  }
+
 
   return (
     <div className="App">
@@ -55,9 +58,9 @@ const App = () => {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='Items' element={<Items />} />
+          <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
           <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='Items/:id' element={<ItemDetails setNewItem={setNewItem} handleDelete={handleDelete} handleSave={handleSave} />} />
+          <Route path='/items/:id' element={<ItemDetails setNewItem={setNewItem} handleSave={handleSave} />} />
         </Routes>
       </main>
     </div>
