@@ -27,15 +27,10 @@ const ItemDetails = (props) => {
 
     }
 
-    const handleSubmit = async (id) => {
-        // let putItem = 
-        await axios.put(`http://localhost:3001/putitem/`)
-
-        // console.log(putItem)
-        // return putItem
-        //    .then(
-        //    () => navigate('/items')
-        //     )
+    const handleSave = async (id) => {
+        await axios.put(`http://localhost:3001/putitem/`).then(
+            () => navigate('/items')
+        )
     }
 
     return (
@@ -93,13 +88,10 @@ const ItemDetails = (props) => {
                                 className='edit-form' />
                         </span>
                     </li>
-                    <div>
-                        <button id='editButton'>Edit</button>
-                    </div>
                     <div onClick={() => handleDelete(retrievedItem._id)}>
                         <button id='deleteButton' type='submit'>Delete</button>
                     </div>
-                    <div onClick={() => handleSubmit(retrievedItem)}>
+                    <div onClick={() => handleSave(retrievedItem)}>
                         <button id='saveButton' type='submit'>Save</button>
                     </div>
                 </div>

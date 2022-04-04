@@ -10,7 +10,6 @@ const getItem = async (req, res) => {
 const getItemById = async (req, res) => {
     console.log(req)
     let gotItemById = await Item.find({ _id: req.params.id })
-    console.log('Got Item By Id')
     res.send(gotItemById)
 }
 
@@ -23,21 +22,13 @@ const postItem = async (req, res) => {
 }
 
 const putItem = async (req, res) => {
-    const item = set(
-        req.body
-    )
-    await item.save()
-    res.send(item)
+    let putsItem = await Item.replaceOne()
+    console.log('putsItem')
+    res.send(putsItem)
 }
-// const putItem = async (req, res) => {
-//     let putsItem = await Item.updateOne()
-//     console.log('putsItem')
-//     res.send(putsItem)
-// }
 
 const deleteItemById = async (req, res) => {
     let deletedItem = await Item.findOneAndRemove({ _id: req.params.id })
-    console.log('deletedItem')
     res.send(deletedItem)
 }
 

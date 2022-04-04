@@ -7,7 +7,6 @@ const inventory = async () => {
     const inventories = []
 
     await Inventory.create(inventories)
-    console.log('Created Inventory Lists!')
 }
 
 const run = async () => {

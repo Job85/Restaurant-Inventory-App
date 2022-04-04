@@ -7,7 +7,6 @@ const main = async () => {
     const items = []
 
     await Item.create(items)
-    console.log('Created An Item!')
 }
 
 const run = async () => {

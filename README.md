@@ -2,12 +2,15 @@
 For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim. Get ready to streamline your inventory process!
 
 ## Features
-- Create, update & delete lists as well as individual items. All in real time
-- Front & Back of House divided into their own elements
-- 
+- Creation of Inventory Items
+
+## App Preview
+![Create Items](/img/CreateItem.png)
+![Item Page](/img/ItemPage.png)
+![Edit Item Details](/img/EditDetails.png)
 
 
-## [User Site In Works]()
+## [Home Page](https://sheltered-fortress-52607.herokuapp.com/)
 
 ### Getting Started
 
@@ -20,6 +23,8 @@ For this deliverable I will be creating a fullstack app. It will be designed to 
 ### Frontend CHD
 ![Frontend CHD](/img/CHD.jpeg)
 
+### Bugs
+Path to save edits with Save button is broken
 
 ### Technologies Used
 - Mongoose
@@ -27,22 +32,4 @@ For this deliverable I will be creating a fullstack app. It will be designed to 
 - React
 - Node
 - MongoDB
-
-
-
-README- General information 
-
-Authors- Credits
-
-Thanks- Acknowledgments
-
-Changelog- A detailed changelog
-
-News- A basic changelog
-
-Install- Installation instructions
-
-Copying/License- Copyright and licensing infor
-
-Bugs- Know bugs and instructions on reporting new ones
 

@@ -38,11 +38,3 @@ const Items = (props) => {
 }
 
 export default Items
-// onClick={handleChange(item._id)}
-// () => props.handleUpdate(this, item._id)
-
-    // let navigate = useNavigate()
-
-    // const showItem = (item) => {
-    //     navigate(`${item.id}`)
-    // }
