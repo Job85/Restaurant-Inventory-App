@@ -1,5 +1,7 @@
+### Author
+Julian Jernigan
 # The Restaurant Inventory App
-For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim. Get ready to streamline your inventory process!
+For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim.
 
 ## Features
 - Creation of Inventory Items

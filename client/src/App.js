@@ -32,14 +32,8 @@ const App = () => {
 
   const handleUpdate = (id) => {
     let editItem = axios.get(`http://localhost:3001/items/${id}`)
-    console.log(editItem)
     return editItem
   }
-
-  // handleSave function passed in props to ItemDetails.jsx
-
-
-
 
   return (
     <div className="App">
@@ -57,7 +51,3 @@ const App = () => {
 }
 
 export default App;
-
-
-
-// setNewItem={setNewItem} editItem={editItem} handleEdit={handleEdit} 
