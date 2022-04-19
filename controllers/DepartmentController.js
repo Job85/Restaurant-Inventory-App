@@ -1,3 +1,4 @@
+const { Router } = require('express')
 const db = require('../db')
 const { Department } = require('../models')
 
@@ -27,9 +28,4 @@ const DeleteDepartment = async (req, res) => {
     res.send(deletedDepartment)
 }
 
-module.exports = {
-    GetDepartment,
-    CreateDepartment,
-    UpdateDepartment,
-    DeleteDepartment
-}
+module.exports = Router

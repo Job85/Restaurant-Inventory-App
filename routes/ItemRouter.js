@@ -1,11 +1,11 @@
 const Router = require('express').Router()
 const controller = require('../controllers/ItemController')
 
-Router.get('/items', controller.GetItems)
-Router.get(`/items/:id`, controller.GetItemById)
-Router.post('/items', controller.PostItem)
-Router.put('/putitem', controller.PutItemById)
-Router.delete('/deleteitem/:id', controller.DeleteItemById)
+Router.get('/', controller.GetItems)
+Router.get(`/:id`, controller.GetItemById)
+Router.post('/create_item', controller.PostItem)
+Router.put('/update_item', controller.PutItemById)
+Router.delete('/delete_item/:id', controller.DeleteItemById)
 
 
 module.exports = Router
