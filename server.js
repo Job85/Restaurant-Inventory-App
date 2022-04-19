@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 app.get('/items', itemController.getItem)
 app.get(`/items/:id`, itemController.getItemById)
 app.post('/items', itemController.postItem)
-app.put('/putitem', itemController.putItem)
+app.put('/putitem', itemController.putItemById)
 app.delete('/deleteitem/:id', itemController.deleteItemById)
 
 app.get('/inventory', inventoryController.getInventory)

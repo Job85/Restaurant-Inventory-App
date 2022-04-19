@@ -1,19 +1,19 @@
 const db = require('../db')
 const { Item } = require('../models')
 
-const getItem = async (req, res) => {
+const GetItems = async (req, res) => {
     let gotItem = await Item.find({})
     console.log('got item')
     res.send(gotItem)
 }
 
-const getItemById = async (req, res) => {
+const GetItemById = async (req, res) => {
     console.log(req)
     let gotItemById = await Item.find({ _id: req.params.id })
     res.send(gotItemById)
 }
 
-const postItem = async (req, res) => {
+const PostItem = async (req, res) => {
     const item = new Item(
         req.body
     )
@@ -21,21 +21,21 @@ const postItem = async (req, res) => {
     res.send(item)
 }
 
-const putItem = async (req, res) => {
-    let putsItem = await Item.replaceOne()
-    console.log('putsItem')
-    res.send(putsItem)
+const PutItemById = async (req, res) => {
+    let updateItem = await Item.findOneAndReplace({ _id: req.params.id })
+    console.log('updateItem')
+    res.send(updateItem)
 }
 
-const deleteItemById = async (req, res) => {
+const DeleteItemById = async (req, res) => {
     let deletedItem = await Item.findOneAndRemove({ _id: req.params.id })
     res.send(deletedItem)
 }
 
 module.exports = {
-    getItem,
-    getItemById,
-    postItem,
-    putItem,
-    deleteItemById
+    GetItems,
+    GetItemById,
+    PostItem,
+    PutItemById,
+    DeleteItemById
 }

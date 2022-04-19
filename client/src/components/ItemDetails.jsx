@@ -18,7 +18,9 @@ const ItemDetails = (props) => {
         updateItem(item.data[0])
     }, [])
 
-
+    const handleChange = (e) => {
+        updateItem({ ...retrievedItem, [e.target.name]: e.target.value })
+    }
 
     const handleDelete = async (id) => {
         await axios.delete(`http://localhost:3001/deleteitem/${id}`).then(
@@ -27,8 +29,8 @@ const ItemDetails = (props) => {
 
     }
 
-    const handleSave = async (id) => {
-        await axios.put(`http://localhost:3001/putitem/`).then(
+    const handleSave = async () => {
+        await axios.put(`http://localhost:3001/putitem/`, retrievedItem).then(
             () => navigate('/items')
         )
     }
@@ -42,7 +44,7 @@ const ItemDetails = (props) => {
                         <span>
                             <label>Location:</label>
                             <input type='text'
-                                onChange={props.handleChange}
+                                onChange={handleChange}
                                 name={'location'}
                                 placeholder={`${retrievedItem.location}`}
                                 className='edit-form' />
