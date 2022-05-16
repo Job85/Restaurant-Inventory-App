@@ -21,22 +21,6 @@ app.get('/', (req, res) => {
     res.send({ msg: 'Server Running ' })
 })
 
-// app.get('/items', itemController.getItem)
-// app.get(`/items/:id`, itemController.getItemById)
-// app.post('/items', itemController.postItem)
-// app.put('/putitem', itemController.putItemById)
-// app.delete('/deleteitem/:id', itemController.deleteItemById)
-
-// app.get('/inventory', inventoryController.getInventory)
-// app.post('/inventory', inventoryController.postInventory)
-// app.put('/inventory', inventoryController.putInventory)
-// app.delete('/inventory', inventoryController.deleteInventory)
-
-// app.get('/department', departmentController.getDepartment)
-// app.post('/department', departmentController.postDepartment)
-// app.put('/department', departmentController.putDepartment)
-// app.delete('/department', departmentController.deleteDepartment)
-
 
 app.get('/*', (req, res) => {
     res.sendFile(`${__dirname}/client/build/index.html`)
