@@ -1,14 +1,10 @@
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
-const departmentController = require('./controllers/DepartmentController')
-const inventoryController = require('./controllers/InventoryController')
-const itemController = require('./controllers/ItemController')
 
 
 const PORT = process.env.PORT || 3001
-const db = require('./db')
-const res = require('express/lib/response')
+
 const app = express()
 
 app.use(cors())
