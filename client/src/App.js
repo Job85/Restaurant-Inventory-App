@@ -7,7 +7,7 @@ import Items from './components/Items';
 import ItemForm from './components/ItemForm';
 import ItemDetails from './components/ItemDetails';
 import axios from 'axios';
-import { BASE_URL } from './globals';
+// import { BASE_URL } from './globals';
 
 export const Context = React.createContext({ value: null, setValue: () => { } });
 
@@ -27,12 +27,12 @@ const App = () => {
   // event handler passed as prop to submit new items in ItemForm.jsx
   const handleSubmit = (e) => {
     e.preventDefault();
-    let postItem = axios.post(`${BASE_URL}/items`, newItem)
+    let postItem = axios.post(`items`, newItem)
     return postItem
   }
 
   const handleUpdate = (id) => {
-    let editItem = axios.get(`${BASE_URL}/items/${id}`)
+    let editItem = axios.get(`items/${id}`)
     return editItem
   }
 
