@@ -7,6 +7,7 @@ import Items from './components/Items';
 import ItemForm from './components/ItemForm';
 import ItemDetails from './components/ItemDetails';
 import axios from 'axios';
+import { BASE_URL } from './globals';
 
 export const Context = React.createContext({ value: null, setValue: () => { } });
 

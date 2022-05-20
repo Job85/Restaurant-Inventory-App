@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios'
-
+import { BASE_URL } from '../globals'
 
 const ItemDetails = (props) => {
     let navigate = useNavigate()
@@ -9,7 +9,7 @@ const ItemDetails = (props) => {
     let [retrievedItem, updateItem] = useState([])
     let { id } = useParams()
     let getItem = async () => {
-        let pendingItem = await axios.get(`http://localhost:3001/items/${id}`)
+        let pendingItem = await axios.get(`${BASE_URL}/items/${id}`)
         return pendingItem
     }
     useEffect(async () => {
@@ -23,14 +23,14 @@ const ItemDetails = (props) => {
     }
 
     const handleDelete = async (id) => {
-        await axios.delete(`http://localhost:3001/deleteitem/${id}`).then(
+        await axios.delete(`${BASE_URL}/deleteitem/${id}`).then(
             () => navigate('/items')
         )
 
     }
 
     const handleSave = async () => {
-        await axios.put(`http://localhost:3001/putitem/`, retrievedItem).then(
+        await axios.put(`${BASE_URL}/putitem/`, retrievedItem).then(
             () => navigate('/items')
         )
     }
