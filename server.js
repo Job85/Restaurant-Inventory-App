@@ -1,7 +1,7 @@
 const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
-
+const BASE_URL = 'http://localhost:3001/api'
 
 const PORT = process.env.PORT || 3001
 

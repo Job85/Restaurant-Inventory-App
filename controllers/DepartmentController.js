@@ -2,13 +2,13 @@ const { Router } = require('express')
 const db = require('../db')
 const { Department } = require('../models')
 
-const GetDepartment = async (req, res) => {
+const getDepartment = async (req, res) => {
     let gotDepartment = await Department.find({})
     console.log('gotDepartment')
     res.send(gotDepartment)
 }
 
-const CreateDepartment = async (req, res) => {
+const createDepartment = async (req, res) => {
     const department = new Department(
         req.body
     )
@@ -16,16 +16,21 @@ const CreateDepartment = async (req, res) => {
     res.send(department)
 }
 
-const UpdateDepartment = async (req, res) => {
+const updateDepartment = async (req, res) => {
     let putsDepartment = await Department.findOneAndUpdate({})
     console.log('putsDepartment')
     res.send(putsDepartment)
 }
 
-const DeleteDepartment = async (req, res) => {
+const deleteDepartment = async (req, res) => {
     let deletedDepartment = await Department.findOneAndRemove({})
     console.log('deletedDepartment')
     res.send(deletedDepartment)
 }
 
-module.exports = Router
+module.exports = {
+    getDepartment,
+    createDepartment,
+    updateDepartment,
+    deleteDepartment
+}
