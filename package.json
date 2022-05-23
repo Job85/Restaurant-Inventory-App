@@ -1,0 +1,20 @@
+{
+  "name": "restaurant-inventory-app",
+  "version": "1.0.0",
+  "description": "Julian Jernigan # The Restaurant Inventory App For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Job85/Restaurant-Inventory-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Job85/Restaurant-Inventory-App/issues"
+  },
+  "homepage": "https://github.com/Job85/Restaurant-Inventory-App#readme"
+}
