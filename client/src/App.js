@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav';
-import Home from './components/Home';
-import Items from './components/Items';
-import ItemForm from './components/ItemForm';
-import ItemDetails from './components/ItemDetails';
+import Home from './pages/Home';
+// import Items from './components/Items';
+// import ItemForm from './components/ItemForm';
+// import ItemDetails from './components/ItemDetails';
 import axios from 'axios';
 import { BASE_URL } from './globals';
 
@@ -42,9 +42,9 @@ const App = () => {
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
+          {/* <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
           <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='/items/:id' element={<ItemDetails setNewItem={setNewItem} />} />
+          <Route path='/items/:id' element={<ItemDetails setNewItem={setNewItem} />} /> */}
         </Routes>
       </main>
     </div>
