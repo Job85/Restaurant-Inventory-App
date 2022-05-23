@@ -1,9 +1,10 @@
 const Router = require('express').Router()
 const controller = require('../controllers/DepartmentController')
 
-Router.get('/', controller.GetDepartment)
-Router.post('/create_department', controller.CreateDepartment)
-Router.put('/update_department', controller.UpdateDepartment)
-Router.delete('/delete_department', controller.DeleteDepartment)
+Router.get('/', controller.getDepartment)
+Router.get('/:id', controller.getDepartmentById)
+Router.post('/create', controller.createDepartment)
+Router.put('/update/:id', controller.updateDepartment)
+Router.delete('/delete/:id', controller.deleteDepartmentById)
 
 module.exports = Router
