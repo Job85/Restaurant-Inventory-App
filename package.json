@@ -4,7 +4,11 @@
   "description": "Julian Jernigan # The Restaurant Inventory App For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon server.js"
   },
   "repository": {
     "type": "git",
