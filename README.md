@@ -1,25 +1,32 @@
+### Author
+Julian Jernigan
 # The Restaurant Inventory App
-For this deliverable I will be creating a fullstack app. This app will be designed to Get ready to streamline your inventory process!
+For this deliverable I will be creating a fullstack app. It will be designed to create, edit, update or delete lists and product items at your whim.
 
 ## Features
-- Create, update & delete lists as well as individual items. All in real time
-- Front & Back of House divided into their own elements
-- 
+- Creation of Inventory Items
+
+## App Preview
+![Create Items](/img/CreateItem.png)
+![Item Page](/img/ItemPage.png)
+![Edit Item Details](/img/EditDetails.png)
 
 
-## [User Site]()
+## [Home Page](https://sheltered-fortress-52607.herokuapp.com/)
 
 ### Getting Started
 
 
-### [Trello Board]()
+### [Trello Board](https://trello.com/b/8bjxsRS1/restraunt-app)
 
 
 ### Backend ERD
-
+![Backend ERD](/img/ERD.jpeg)
 ### Frontend CHD
-![B73D6B36-89B9-4451-926C-7E2D95DDE591.jpeg]
+![Frontend CHD](/img/CHD.jpeg)
 
+### Bugs
+Path to save edits with Save button is broken
 
 ### Technologies Used
 - Mongoose
@@ -27,22 +34,4 @@ For this deliverable I will be creating a fullstack app. This app will be design
 - React
 - Node
 - MongoDB
-
-
-
-README- General information 
-
-Authors- Credits
-
-Thanks- Acknowledgments
-
-Changelog- A detailed changelog
-
-News- A basic changelog
-
-Install- Installation instructions
-
-Copying/License- Copyright and licensing infor
-
-Bugs- Know bugs and instructions on reporting new ones
 
