@@ -32,7 +32,7 @@ const App = () => {
   // event handler passed as prop to submit new items in ItemForm.jsx
   const handleSubmit = (e) => {
     e.preventDefault();
-    let postItem = axios.post(`${BASE_URL}/item`, newItem)
+    let postItem = axios.post(`${BASE_URL}/item/create`, newItem)
     return postItem
   }
 
