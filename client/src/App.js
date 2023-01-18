@@ -17,9 +17,13 @@ const App = () => {
   let [newItem, setNewItem] = useState({
     location: '',
     category: '',
-    item: '',
-    size: '',
-    count: ''
+    item_name: '',
+    description: '',
+    unit_measure: '',
+    case_size: '',
+    count: '',
+    vendor_name: '',
+    vendor_code: ''
   })
 
   const handleChange = (e) => {

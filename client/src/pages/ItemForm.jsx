@@ -30,30 +30,66 @@ const ItemForm = (props) => {
                                 className='label-form' />
                         </ul>
                         <ul>
-                            <label id='item'>Item:</label>
+                            <label id='item_name'>Item:</label>
                             <input type='text'
-                                defaultValue={props.newItem.item}
+                                defaultValue={props.newItem.item_name}
                                 onChange={props.handleChange}
-                                name={'item'}
+                                name={'item_name'}
                                 placeholder={'item'}
                                 className='label-form' />
                         </ul>
                         <ul>
-                            <label id='size'>Size:</label>
+                            <label id='description'>Description:</label>
                             <input type='text'
-                                defaultValue={props.newItem.size}
+                                defaultValue={props.newItem.description}
                                 onChange={props.handleChange}
-                                name={'size'}
-                                placeholder={'size'}
+                                name={'description'}
+                                placeholder={'description'}
+                                className='label-form' />
+                        </ul>
+                        <ul>
+                            <label id='unit_measure'>Unit of Measure:</label>
+                            <input type='text'
+                                defaultValue={props.newItem.unit_measure}
+                                onChange={props.handleChange}
+                                name={'unit_measure'}
+                                placeholder={'unit of measure'}
+                                className='label-form' />
+                        </ul>
+                        <ul>
+                            <label id='case_size'>Case Size:</label>
+                            <input type='text'
+                                defaultValue={props.newItem.case_size}
+                                onChange={props.handleChange}
+                                name={'case_size'}
+                                placeholder={'case size'}
                                 className='label-form' />
                         </ul>
                         <ul>
                             <label id='count'>Count:</label>
-                            <input type='text'
+                            <input type='number'
                                 defaultValue={props.newItem.count}
                                 onChange={props.handleChange}
                                 name={'count'}
                                 placeholder={'count'}
+                                className='label-form' />
+                        </ul>
+                        <ul>
+                            <label id='vendor_name'>Vendor Name:</label>
+                            <input type='text'
+                                defaultValue={props.newItem.vendor_name}
+                                onChange={props.handleChange}
+                                name={'vendor_name'}
+                                placeholder={'vendor_name'}
+                                className='label-form' />
+                        </ul>
+                        <ul>
+                            <label id='vendor_code'>Vendor Code:</label>
+                            <input type='text'
+                                defaultValue={props.newItem.vendor_code}
+                                onChange={props.handleChange}
+                                name={'vendor_code'}
+                                placeholder={'vendor_code'}
                                 className='label-form' />
                         </ul>
                     </ul>
