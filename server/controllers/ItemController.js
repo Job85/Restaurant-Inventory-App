@@ -21,6 +21,17 @@ const postItem = async (req, res) => {
     res.send(item)
 }
 
+const putItemById = async (req, res) => {
+    let updateItem = await Item.findOneAndReplace(
+        { _id: req.params.id },
+        {
+            ...req.body
+        }
+    )
+    console.log(updateItem)
+    res.send(updateItem)
+}
+
 const deleteItemById = async (req, res) => {
     let deletedItem = await Item.findOneAndRemove({ _id: req.params.id })
     console.log('Deleted Item!')
@@ -31,5 +42,6 @@ module.exports = {
     getItems,
     getItemById,
     postItem,
+    putItemById,
     deleteItemById
 }
