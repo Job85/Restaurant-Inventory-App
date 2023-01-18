@@ -21,15 +21,15 @@ const Items = (props) => {
             <div className='item-container'>
                 {items.map((item, i) => (
                     <li className='item-card card' key={i}>
-                        <span className='item-card-span'>Location:{item.location}</span>
-                        <span className='item-card-span'> Category:{item.category}</span>
-                        <span className='item-card-span'> Item:{item.item_name}</span>
-                        <span className='item-card-span'>Description:{item.description}</span>
-                        <span className='item-card-span'>Unit of Measure:{item.unit_measure}</span>
-                        <span className='item-card-span'>Case Size:{item.case_size}</span>
-                        <span className='item-card-span'>Count:{item.count}</span>
-                        <span className='item-card-span'>Vendor Name:{item.vendor_name}</span>
-                        <span className='item-card-span'>Vendor Code:{item.vednor_code}</span>
+                        <span className='item-card-span'>Location:<span className='item-field'>{item.location}</span></span>
+                        <span className='item-card-span'> Category:<span className='item-field'>{item.category}</span></span>
+                        <span className='item-card-span'> Item:<span className='item-field'>{item.item_name}</span></span>
+                        <span className='item-card-span'>Description:<span className='item-field'>{item.description}</span></span>
+                        <span className='item-card-span'>Unit of Measure:<span className='item-field'>{item.unit_measure}</span></span>
+                        <span className='item-card-span'>Case Size:<span className='item-field'>{item.case_size}</span></span>
+                        <span className='item-card-span'>Count:<span className='item-field'>{item.count}</span></span>
+                        <span className='item-card-span'>Vendor Name:<span className='item-field'>{item.vendor_name}</span></span>
+                        <span className='item-card-span'>Vendor Code:<span className='item-field'>{item.vednor_code}</span></span>
                         <Link to={`/items/${item._id}`}>
                             <button className='up-button'>
                                 Update

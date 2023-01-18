@@ -39,6 +39,10 @@
   text-align: left;
 }
 
+.item-field {
+  font-weight: bold;
+}
+
 .label-form {
   width: 15%;
 }
