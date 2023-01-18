@@ -23,7 +23,7 @@ const ItemDetails = (props) => {
     }
 
     const handleDelete = async (id) => {
-        await axios.delete(`${BASE_URL}/deleteitem/${id}`).then(
+        await axios.delete(`${BASE_URL}/item/delete/${id}`).then(
             () => navigate('/items')
         )
 
