@@ -1,9 +1,15 @@
 const { Item } = require('../models')
 
 const getItems = async (req, res) => {
-    let gotItem = await Item.find({})
+    let gotItems = await Item.find({})
     console.log('Got Items!')
-    res.send(gotItem)
+    res.send(gotItems)
+}
+
+const getItemById = async (req, res) => {
+    let gotItemById = await Item.find({ _id: req.params.id })
+    console.log('Got Item by ID!')
+    res.send(gotItemById)
 }
 
 const postItem = async (req, res) => {
@@ -23,6 +29,7 @@ const deleteItemById = async (req, res) => {
 
 module.exports = {
     getItems,
+    getItemById,
     postItem,
     deleteItemById
 }
