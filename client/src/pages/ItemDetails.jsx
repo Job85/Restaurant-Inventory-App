@@ -9,7 +9,7 @@ const ItemDetails = (props) => {
     let [retrievedItem, updateItem] = useState([])
     let { id } = useParams()
     let getItem = async () => {
-        let pendingItem = await axios.get(`${BASE_URL}/items/${id}`)
+        let pendingItem = await axios.get(`${BASE_URL}/item/${id}`)
         return pendingItem
     }
     useEffect(async () => {
@@ -44,7 +44,7 @@ const ItemDetails = (props) => {
                         <span>
                             <label>Location:</label>
                             <input type='text'
-                                onChange={handleChange}
+                                onChange={props.handleChange}
                                 name={'location'}
                                 placeholder={`${retrievedItem.location}`}
                                 className='edit-form' />
@@ -66,17 +66,37 @@ const ItemDetails = (props) => {
                             <input type='text'
                                 onChange={props.handleChange}
                                 name={'item'}
-                                placeholder={`${retrievedItem.item}`}
+                                placeholder={`${retrievedItem.item_name}`}
                                 className='edit-form' />
                         </span>
                     </li>
                     <li className='item-card'>
                         <span>
-                            <label>Size:</label>
+                            <label>Description:</label>
                             <input type='text'
                                 onChange={props.handleChange}
-                                name={'size'}
-                                placeholder={`${retrievedItem.size}`}
+                                name={'description'}
+                                placeholder={`${retrievedItem.description}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Unit of Measure:</label>
+                            <input type='text'
+                                onChange={props.handleChange}
+                                name={'unit_measure'}
+                                placeholder={`${retrievedItem.unit_measure}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Case Size:</label>
+                            <input type='text'
+                                onChange={props.handleChange}
+                                name={'case_size'}
+                                placeholder={`${retrievedItem.case_size}`}
                                 className='edit-form' />
                         </span>
                     </li>
@@ -87,6 +107,26 @@ const ItemDetails = (props) => {
                                 onChange={props.handleChange}
                                 name={'count'}
                                 placeholder={`${retrievedItem.count}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Vendor Name:</label>
+                            <input type='text'
+                                onChange={props.handleChange}
+                                name={'vendor_name'}
+                                placeholder={`${retrievedItem.vendor_name}`}
+                                className='edit-form' />
+                        </span>
+                    </li>
+                    <li className='item-card'>
+                        <span>
+                            <label>Vendor Code:</label>
+                            <input type='text'
+                                onChange={props.handleChange}
+                                name={'vendor_code'}
+                                placeholder={`${retrievedItem.vendor_code}`}
                                 className='edit-form' />
                         </span>
                     </li>
