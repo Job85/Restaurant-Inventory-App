@@ -20,18 +20,18 @@ const Items = (props) => {
             <h1>Items List</h1>
             <div className='item-container'>
                 {items.map((item, i) => (
-                    <li className='item-card' key={i}>
+                    <li className='item-card card' key={i}>
                         <span className='item-card-span'>Location:{item.location}</span>
                         <span className='item-card-span'> Category:{item.category}</span>
                         <span className='item-card-span'> Item:{item.item_name}</span>
                         <span className='item-card-span'>Description:{item.description}</span>
-                        <span className='count-span'>Unit of Measure:{item.unit_measure}</span>
+                        <span className='item-card-span'>Unit of Measure:{item.unit_measure}</span>
                         <span className='item-card-span'>Case Size:{item.case_size}</span>
                         <span className='item-card-span'>Count:{item.count}</span>
                         <span className='item-card-span'>Vendor Name:{item.vendor_name}</span>
                         <span className='item-card-span'>Vendor Code:{item.vednor_code}</span>
                         <Link to={`/items/${item._id}`}>
-                            <button >
+                            <button className='up-button'>
                                 Update
                             </button>
                         </Link>
