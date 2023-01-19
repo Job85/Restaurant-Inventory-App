@@ -29,7 +29,7 @@ const Items = (props) => {
                         <span className='item-card-span'>Case Size:<span className='item-field'>{item.case_size}</span></span>
                         <span className='item-card-span'>Count:<span className='item-field'>{item.count}</span></span>
                         <span className='item-card-span'>Vendor Name:<span className='item-field'>{item.vendor_name}</span></span>
-                        <span className='item-card-span'>Vendor Code:<span className='item-field'>{item.vednor_code}</span></span>
+                        <span className='item-card-span'>Vendor Code:<span className='item-field'>{item.vendor_code}</span></span>
                         <Link to={`/items/${item._id}`}>
                             <button className='up-button'>
                                 Update
