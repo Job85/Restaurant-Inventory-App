@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Routes, Route, } from 'react-router-dom';
 import './App.css';
-import Nav from './components/Nav';
+import Header from './components/Nav';
 import Home from './pages/Home';
 import Items from './pages/Items';
 import ItemForm from './pages/ItemForm';
@@ -43,7 +43,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <Nav />
+      <header className='App-header'>
+        <Header />
+      </header>
       <main>
         <Routes>
           <Route path='/' element={<Home />} />
