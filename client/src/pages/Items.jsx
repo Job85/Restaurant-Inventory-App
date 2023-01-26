@@ -21,15 +21,15 @@ const Items = (props) => {
             <div className='item-container'>
                 {items.map((item, i) => (
                     <li className='item-card card' key={i}>
-                        <span className='item-card-span'>Location:<span className='item-field'>{item.location}</span></span>
-                        <span className='item-card-span'> Category:<span className='item-field'>{item.category}</span></span>
-                        <span className='item-card-span'> Item:<span className='item-field'>{item.item_name}</span></span>
-                        <span className='item-card-span'>Description:<span className='item-field'>{item.description}</span></span>
-                        <span className='item-card-span'>Unit of Measure:<span className='item-field'>{item.unit_measure}</span></span>
-                        <span className='item-card-span'>Case Size:<span className='item-field'>{item.case_size}</span></span>
-                        <span className='item-card-span'>Count:<span className='item-field'>{item.count}</span></span>
-                        <span className='item-card-span'>Vendor Name:<span className='item-field'>{item.vendor_name}</span></span>
-                        <span className='item-card-span'>Vendor Code:<span className='item-field'>{item.vendor_code}</span></span>
+                        <span className='item-card-span'><b>Location:</b><span className='item-field'>{item.location}</span></span>
+                        <span className='item-card-span'><b>Category:</b><span className='item-field'>{item.category}</span></span>
+                        <span className='item-card-span'><b>Item:</b><span className='item-field'>{item.item_name}</span></span>
+                        <span className='item-card-span'><b>Description:</b><span className='item-field'>{item.description}</span></span>
+                        <span className='item-card-span'><b>Unit of Measure:</b><span className='item-field'>{item.unit_measure}</span></span>
+                        <span className='item-card-span'><b>Case Size:</b><span className='item-field'>{item.case_size}</span></span>
+                        <span className='item-card-span'><b>Count:</b><span className='item-field'>{item.count}</span></span>
+                        <span className='item-card-span'><b>Vendor Name:</b><span className='item-field'>{item.vendor_name}</span></span>
+                        <span className='item-card-span'><b>Vendor Code:</b><span className='item-field'>{item.vendor_code}</span></span>
                         <Link to={`/items/${item._id}`}>
                             <button className='up-button'>
                                 Update
