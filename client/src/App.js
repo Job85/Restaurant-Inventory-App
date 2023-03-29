@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Routes, Route, } from 'react-router-dom';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 import './App.css';
 import Header from './components/Nav';
 import Home from './pages/Home';
@@ -13,6 +13,8 @@ import { BASE_URL } from './globals';
 export const Context = React.createContext({ value: null, setValue: () => { } });
 
 const App = () => {
+  let navigate = useNavigate()
+
   // hook to populate new items in ItemForm.jsx
   let [newItem, setNewItem] = useState({
     location: '',
@@ -33,7 +35,9 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     let postItem = axios.post(`${BASE_URL}/item/create`, newItem)
+    navigate('/items')
     return postItem
+
   }
 
   const handleUpdate = (id) => {
