@@ -1,5 +1,4 @@
 const express = require('express')
-const serverless = require('serverless-http')
 const cors = require('cors')
 const logger = require('morgan')
 const db = require('./db')
@@ -19,10 +18,7 @@ app.get('/', (req, res) => {
     res.send('This is root!')
 })
 
-if (process.env.ENVIRONMENT === 'production') {
-    exports.handler = serverless(app);
-} else {
-    app.listen(PORT, () => {
-        console.log(`Express server listening on port ${PORT}`)
-    })
-}
+
+app.listen(PORT, () => {
+    console.log(`Express server listening on port ${PORT}`)
+})
