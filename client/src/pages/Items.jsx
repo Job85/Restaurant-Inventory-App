@@ -11,7 +11,7 @@ const Items = (props) => {
     }
     useEffect(async () => {
         let items = await getItems()
-        console.log(items)
+        // console.log(items)
         setItems(items.data)
     }, [])
 

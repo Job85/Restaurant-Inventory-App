@@ -20,7 +20,6 @@ const ItemDetails = (props) => {
     })
 
     const getItem = async () => {
-        // let url = process.env.NODE_ENV === 'local' ? `http://localhost:3001/api/item/${id}` : `https://server-inventory-app.herokuapp.com/api/item/${id}`;
         let item = await axios.get(`${BASE_URL}/item/${id}`)
         setFormValues(item.data[0])
         console.log(item.data)
@@ -65,33 +64,6 @@ const ItemDetails = (props) => {
         axios.put(`${BASE_URL}/item/update/${id}`, formValues)
         navigate('/items');
     }
-    // let [retrievedItem, updateItem] = useState([])
-    // let getItem = async () => {
-    //     let pendingItem = await axios.get(`${BASE_URL}/item/${id}`)
-    //     return pendingItem
-    // }
-    // useEffect(async () => {
-    //     let item = await getItem()
-    //     console.log(item)
-    //     updateItem(item.data[0])
-    // }, [])
-
-    // const handleChange = (e) => {
-    //     updateItem({ ...retrievedItem, [e.target.name]: e.target.value })
-    // }
-
-    // const handleDelete = async (id) => {
-    //     await axios.delete(`${BASE_URL}/item/delete/${id}`).then(
-    //         () => navigate('/items')
-    //     )
-
-    // }
-
-    // const handleSave = async () => {
-    //     await axios.put(`${BASE_URL}/update/item/${id}`, retrievedItem).then(
-    //         () => navigate('/items')
-    //     )
-    // }
 
     return (
         <div className='items'>
