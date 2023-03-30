@@ -1,6 +1,5 @@
 const express = require('express')
 const cors = require('cors')
-// const logger = require('morgan')
 const db = require('./db')
 const AppRouter = require('./routes/AppRouter')
 
@@ -8,11 +7,7 @@ const app = express()
 
 const PORT = process.env.PORT || 3001
 
-app.use(cors({
-    origin: 'https://restaurant-inventory-77229.web.app/api',
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
-}));
+app.use(cors())
 app.use(express.json())
 app.use(logger('dev'))
 
