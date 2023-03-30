@@ -2,8 +2,8 @@ const functions = require("firebase-functions");
 const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
-const db = require('./db')
-const AppRouter = require('./routes/AppRouter')
+const db = require('../db')
+const AppRouter = require('../routes/AppRouter')
 
 const server = express()
 
