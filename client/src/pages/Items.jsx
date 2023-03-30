@@ -3,7 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 // import { BASE_URL } from '../globals'
 
-let BASE_URL = 'https://inventory-app-541b2.web.app/api'
+let BASE_URL = 'https://restaurant-backend-97d70.web.app/api'
 
 const Items = (props) => {
     let [items, setItems] = useState([])
