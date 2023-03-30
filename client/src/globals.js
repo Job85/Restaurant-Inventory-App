@@ -1,3 +1,1 @@
-export const BASE_URL = 'https://restaurant-backend-97d70.web.app/api'
-// export const BASE_URL = 'http://localhost:3001/api'
-// export const BASE_URL = `https://inventory-api-wh8v.onrender.com/api`
+export const BASE_URL = 'https://inventory-api-eoqp.onrender.com/api'
