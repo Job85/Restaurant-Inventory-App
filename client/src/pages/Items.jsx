@@ -7,8 +7,15 @@ let BASE_URL = 'https://restaurant-backend-97d70.web.app/api'
 
 const Items = (props) => {
     let [items, setItems] = useState([])
+
+    const axiosConfig = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+
     const getItems = async () => {
-        let retrievedItems = await axios.get(`${BASE_URL}/item`)
+        let retrievedItems = await axios.get(`${BASE_URL}/item`, axiosConfig)
         return retrievedItems
     }
     useEffect(async () => {
