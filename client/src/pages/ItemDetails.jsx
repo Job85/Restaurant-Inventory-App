@@ -22,7 +22,7 @@ const ItemDetails = (props) => {
     const getItem = async () => {
         let item = await axios.get(`${BASE_URL}/item/${id}`)
         setFormValues(item.data[0])
-        console.log(item.data)
+        // console.log(item.data)
     }
 
     useEffect(() => {
