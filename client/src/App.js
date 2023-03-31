@@ -8,7 +8,10 @@ import Items from './pages/Items';
 import ItemForm from './pages/ItemForm';
 import ItemDetails from './pages/ItemDetails';
 import axios from 'axios';
-import { BASE_URL } from './globals';
+// import { BASE_URL } from './globals';
+
+// let BASE_URL = 'https://inventory-api-eoqp.onrender.com/api'
+let BASE_URL = 'http://localhost:3001/api/'
 
 export const Context = React.createContext({ value: null, setValue: () => { } });
 

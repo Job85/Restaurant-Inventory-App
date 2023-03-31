@@ -3,23 +3,15 @@ import axios from 'axios'
 import { Link } from 'react-router-dom';
 import { BASE_URL } from '../globals'
 
-
 const Items = (props) => {
     let [items, setItems] = useState([])
 
-    const axiosConfig = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-
     const getItems = async () => {
-        let retrievedItems = await axios.get(`${BASE_URL}/item`, axiosConfig)
+        let retrievedItems = await axios.get(`${BASE_URL}/item`)
         return retrievedItems
     }
     useEffect(async () => {
         let items = await getItems()
-        // console.log(items)
         setItems(items.data)
     }, [])
 
