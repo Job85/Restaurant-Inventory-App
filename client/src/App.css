@@ -13,8 +13,62 @@
   color: white;
 }
 
-.App-link {
+/* .App-link {
   color: #61dafb;
+} */
+
+.cardUl {
+  display: grid;
+  grid-template-areas:
+    "location locationInput"
+    "category categoryInput"
+    "item itemInput"
+    "description descriptionInput"
+    "uom uomInput"
+    "case caseInput"
+    "vendor vendorInput"
+    "vc vcInput"
+  ;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.location {
+  /* grid-area: location; */
+  padding: 0;
+}
+
+.locationInput {
+  grid-area: locationInput;
+}
+
+.category {
+  grid-area: category;
+}
+
+.categoryInput {
+  grid-area: categoryInput;
+}
+
+
+.itemInput {
+  grid-area: itemInput;
+}
+
+.descriptionInput {
+  grid-area: descriptionInput;
+}
+
+.uomInput {
+  grid-area: uomInput;
+}
+
+.caseInput {
+  grid-area: caseInput;
+}
+
+.vendorInput {
+  grid-area: vendorInput;
 }
 
 .item-container {
@@ -24,9 +78,9 @@
 }
 
 .create {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
 }
 
 .card {
