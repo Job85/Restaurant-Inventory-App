@@ -17,8 +17,13 @@
   color: #61dafb;
 } */
 
+.card {
+  margin: 0 auto;
+}
+
 .cardUl {
   display: grid;
+  place-items: center;
   grid-template-areas:
     "location locationInput"
     "category categoryInput"
@@ -28,6 +33,7 @@
     "case caseInput"
     "vendor vendorInput"
     "vc vcInput"
+    "addButton addButton"
   ;
   list-style-type: none;
   padding-left: 0;
@@ -77,10 +83,14 @@
   align-items: center;
 }
 
+.addButton {
+  grid-area: addButton;
+}
+
 .create {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
 }
 
 .card {
@@ -92,6 +102,11 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+}
+
+.createForm {
+  display: flex;
+  align-items: center;
 }
 
 .navbar a {
