@@ -87,12 +87,6 @@
   grid-area: addButton;
 }
 
-.create {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-}
-
 .card {
   width: 30%;
   padding: 2rem;
