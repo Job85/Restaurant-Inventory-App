@@ -5,7 +5,7 @@ import './App.css';
 import Header from './components/Nav';
 import Home from './pages/Home';
 import Items from './pages/Items';
-import ItemForm from './pages/ItemForm';
+import CreateItem from './pages/CreateItem';
 import ItemDetails from './pages/ItemDetails';
 import axios from 'axios';
 // import { BASE_URL } from './globals';
@@ -57,7 +57,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
-          <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
+          <Route path='/new' element={<CreateItem newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
           <Route path='/items/:id' element={<ItemDetails newItem={newItem} setNewItem={setNewItem} handleChange={handleChange} />} />
         </Routes>
       </main>
