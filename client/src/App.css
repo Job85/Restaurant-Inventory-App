@@ -25,6 +25,7 @@
   display: grid;
   place-items: center;
   grid-template-areas:
+    "cardHeader cardHeader"
     "location locationInput"
     "category categoryInput"
     "item itemInput"
@@ -36,11 +37,16 @@
     "addButton addButton"
   ;
   list-style-type: none;
-  padding-left: 0;
+  padding: 0;
+}
+
+.cardHeader {
+  grid-area: cardHeader;
+  margin-top: 0;
 }
 
 .location {
-  /* grid-area: location; */
+  grid-area: location;
   padding: 0;
 }
 

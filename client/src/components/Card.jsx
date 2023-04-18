@@ -13,11 +13,10 @@ const item = [
 
 const inventoryItem = item.map((content, index) => <li key={index}>{content}</li>);
 
-const Card = ({ title, children }) => {
+const Card = ({ children }) => {
 
     return (
         <div className="card">
-            <h2>{title}</h2>
             <div>
                 <ul className="cardUl">{inventoryItem}{children}</ul>
             </div>
