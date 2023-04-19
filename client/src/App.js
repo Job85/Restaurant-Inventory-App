@@ -5,8 +5,8 @@ import './App.css';
 import Header from './components/Nav';
 import Home from './pages/Home';
 import Items from './pages/Items';
-import ItemForm from './pages/ItemForm';
-import ItemDetails from './pages/ItemDetails';
+import ItemForm from './components/ItemForm';
+import ItemDetails from './components/ItemDetails';
 import axios from 'axios';
 // import { BASE_URL } from './globals';
 
