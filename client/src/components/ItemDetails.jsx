@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { setCardTitle } from '../slices/cardTitleSlice';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -10,18 +10,22 @@ const ItemDetails = (props) => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(setCardTitle('Edit Item'));
-    }, [dispatch]);
+    const [itemData, setItemData] = useState(null);
 
     let navigate = useNavigate()
     let { id } = useParams()
 
     const getItem = async () => {
         let item = await axios.get(`${BASE_URL}/item/${id}`)
-        props.setNewItem(item.data[0])
-        // console.log(item.data)
+        setItemData(item.data[0].item_name);
+        props.setNewItem(item.data[0]);
     }
+
+    useEffect(() => {
+        if (itemData) {
+            dispatch(setCardTitle(`Edit ${itemData}`));
+        }
+    }, [dispatch, itemData])
 
     useEffect(() => {
         getItem();
