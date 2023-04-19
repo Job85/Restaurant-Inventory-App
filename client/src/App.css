@@ -17,15 +17,12 @@
   color: #61dafb;
 } */
 
-.card {
-  margin: 0 auto;
-}
+.card {}
 
 .cardUl {
   display: grid;
   place-items: center;
   grid-template-areas:
-    "cardHeader cardHeader"
     "location locationInput"
     "category categoryInput"
     "item itemInput"
@@ -102,6 +99,7 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .createForm {

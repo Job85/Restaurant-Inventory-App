@@ -19,7 +19,7 @@ const Card = ({ children }) => {
 
     return (
         <div className="card">
-            <h2>{cardTitle}</h2>
+            <h2 className="cardHeader">{cardTitle}</h2>
             <div>
                 <ul className="cardUl">{inventoryItem}{children}</ul>
             </div>
