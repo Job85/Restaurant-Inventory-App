@@ -1,10 +1,19 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setCardTitle } from '../slices/cardTitleSlice';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import { BASE_URL } from '../globals'
 import ItemForm from './ItemForm';
 
 const ItemDetails = (props) => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setCardTitle('Edit Item'));
+    }, [dispatch]);
+
     let navigate = useNavigate()
     let { id } = useParams()
 
