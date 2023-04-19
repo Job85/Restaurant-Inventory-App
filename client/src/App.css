@@ -13,12 +13,6 @@
   color: white;
 }
 
-/* .App-link {
-  color: #61dafb;
-} */
-
-.card {}
-
 .cardUl {
   display: grid;
   place-items: center;
