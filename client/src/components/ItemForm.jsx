@@ -1,17 +1,23 @@
-import React from "react"
-import Card from "./Card"
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setCardTitle } from '../slices/cardTitleSlice';
+import Card from "./Card";
 
 const ItemForm = (props) => {
+
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setCardTitle('New Item Form'));
+    }, [dispatch]);
 
     return (
         <>
             <form onSubmit={props.handleSubmit}>
                 <Card
                     className="homeCard"
+                    cardTitle="New Item Form"
                 >
-                    <h2
-                        className="cardHeader"
-                    >{props.newItem.item_name} Card</h2>
                     <input
                         type='text'
                         defaultValue={props.newItem.location}
