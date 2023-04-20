@@ -13,6 +13,8 @@ const ItemForm = (props) => {
 
     return (
         <>
+            <h1 className="pageTitle">Create A New Inventory Item</h1>
+            <p className="pageDescription">Fill out the form below to create a new item for your inventory</p>
             <form onSubmit={props.handleSubmit}>
                 <Card
                     className="homeCard"
