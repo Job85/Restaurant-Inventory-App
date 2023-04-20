@@ -16,6 +16,7 @@
 .cardUl {
   display: grid;
   place-items: center;
+  justify-content: center;
   grid-template-areas:
     "location locationInput"
     "category categoryInput"
