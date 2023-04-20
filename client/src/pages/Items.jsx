@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
-import axios from 'axios'
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { BASE_URL } from '../globals'
+import Card from '../components/Card';
 
 const Items = (props) => {
     let [items, setItems] = useState([])
@@ -20,22 +21,23 @@ const Items = (props) => {
             <h1>Items List</h1>
             <div className='item-container'>
                 {items.map((item, i) => (
-                    <li className='item-card card' key={i}>
-                        <span className='item-card-span'><b>Location:</b><span className='item-field'>{item.location}</span></span>
-                        <span className='item-card-span'><b>Category:</b><span className='item-field'>{item.category}</span></span>
-                        <span className='item-card-span'><b>Item:</b><span className='item-field'>{item.item_name}</span></span>
-                        <span className='item-card-span'><b>Description:</b><span className='item-field'>{item.description}</span></span>
-                        <span className='item-card-span'><b>Unit of Measure:</b><span className='item-field'>{item.unit_measure}</span></span>
-                        <span className='item-card-span'><b>Case Size:</b><span className='item-field'>{item.case_size}</span></span>
-                        <span className='item-card-span'><b>Count:</b><span className='item-field'>{item.count}</span></span>
-                        <span className='item-card-span'><b>Vendor Name:</b><span className='item-field'>{item.vendor_name}</span></span>
-                        <span className='item-card-span'><b>Vendor Code:</b><span className='item-field'>{item.vendor_code}</span></span>
-                        <Link to={`/items/${item._id}`}>
+                    <Card key={i}>
+
+                        <span className='locationInput'>{item.location}</span>
+                        <span className='categoryInput'>{item.category}</span>
+                        <span className='itemInput'>{item.item_name}</span>
+                        <span className='descriptionInput'>{item.description}</span>
+                        <span className='uomInput'> {item.unit_measure}</span>
+                        <span className='caseInput'>{item.case_size}</span>
+                        <span className='vendorInput'>{item.vendor_name}</span>
+                        <span className='vcInput'>{item.vendor_code}</span>
+                        <Link className='addButton' to={`/items/${item._id}`}>
                             <button className='up-button'>
                                 Update
                             </button>
                         </Link>
-                    </li>
+
+                    </Card>
                 ))}
             </div>
         </div>
