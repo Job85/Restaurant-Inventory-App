@@ -2,14 +2,24 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCardTitle } from '../slices/cardTitleSlice';
 import Card from "./card/Card";
+import Button from './Button';
+import { setButtonName } from "../slices/buttonNameSlice";
 
 const ItemForm = (props) => {
 
+    // Dispatch action to Redux store
     const dispatch = useDispatch();
 
+    // change cardTitle=""
     useEffect(() => {
         dispatch(setCardTitle('New Item Form'));
     }, [dispatch]);
+
+    // change buttonName=""
+    useEffect(() => {
+        dispatch(setButtonName('Add'));
+    }, [dispatch]);
+
 
     return (
         <>
@@ -18,7 +28,7 @@ const ItemForm = (props) => {
             <form onSubmit={props.handleSubmit}>
                 <Card
                     className="home-card"
-                    cardTitle="New Item Form"
+                    cardTitle=""
                 >
                     <input
                         type='text'
@@ -84,12 +94,11 @@ const ItemForm = (props) => {
                         placeholder={'vendor_code'}
                         className='vc-input'
                     />
-                    <button
-                        type="submit"
-                        className="add-button"
-                    >
-                        Add Item
-                    </button>
+                    <Button
+                        type='submit'
+                        className='add-button'
+                        buttonName=""
+                    />
                 </Card>
             </form>
         </>
