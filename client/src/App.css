@@ -14,9 +14,9 @@
 }
 
 .cardUl {
+  grid-area: cardUl;
   display: grid;
-  place-items: center;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-template-areas:
     "location locationInput"
     "category categoryInput"
@@ -28,8 +28,10 @@
     "vc vcInput"
     "addButton addButton"
   ;
+  place-items: center;
   list-style-type: none;
   padding: 0;
+  max-width: 100%;
 }
 
 .cardHeader {
@@ -86,15 +88,23 @@
 }
 
 .card {
+  display: grid;
+  grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+  grid-template-areas:
+    "cardHeader"
+    "cardUl"
+    "cardButton"
+  ;
+  justify-content: center;
+  place-items: center;
   width: 30%;
   padding: 2rem;
   border: 1px solid grey;
   -webkit-box-shadow: 1px 3px 15px -4px #000000;
   box-shadow: 1px 3px 15px -4px #000000;
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
   margin: 0 auto;
+
 }
 
 .createForm {
