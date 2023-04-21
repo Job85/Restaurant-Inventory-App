@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { BASE_URL } from '../globals'
-import Card from '../components/Card';
+import Card from '../components/card/Card';
 
 const Items = (props) => {
     let [items, setItems] = useState([])

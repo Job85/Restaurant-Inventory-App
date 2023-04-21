@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { setCardTitle } from '../slices/cardTitleSlice';
-import Card from "./Card";
+import Card from "./card/Card";
 
 const ItemForm = (props) => {
 
