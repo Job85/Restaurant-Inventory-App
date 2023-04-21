@@ -23,15 +23,15 @@ const Items = (props) => {
                 {items.map((item, i) => (
                     <Card key={i}>
 
-                        <span className='locationInput'>{item.location}</span>
-                        <span className='categoryInput'>{item.category}</span>
-                        <span className='itemInput'>{item.item_name}</span>
-                        <span className='descriptionInput'>{item.description}</span>
-                        <span className='uomInput'> {item.unit_measure}</span>
-                        <span className='caseInput'>{item.case_size}</span>
-                        <span className='vendorInput'>{item.vendor_name}</span>
-                        <span className='vcInput'>{item.vendor_code}</span>
-                        <Link className='addButton' to={`/items/${item._id}`}>
+                        <span className='location-input'>{item.location}</span>
+                        <span className='category-input'>{item.category}</span>
+                        <span className='item-input'>{item.item_name}</span>
+                        <span className='description-input'>{item.description}</span>
+                        <span className='uom-input'> {item.unit_measure}</span>
+                        <span className='case-input'>{item.case_size}</span>
+                        <span className='vendor-input'>{item.vendor_name}</span>
+                        <span className='vc-input'>{item.vendor_code}</span>
+                        <Link className='add-button' to={`/items/${item._id}`}>
                             <button className='up-button'>
                                 Update
                             </button>

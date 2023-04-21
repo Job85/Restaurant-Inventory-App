@@ -13,20 +13,20 @@
   color: white;
 }
 
-.cardUl {
+.card-ul {
   grid-area: cardUl;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-template-areas:
-    "location locationInput"
-    "category categoryInput"
-    "item itemInput"
-    "description descriptionInput"
-    "uom uomInput"
-    "case caseInput"
-    "vendor vendorInput"
-    "vc vcInput"
-    "addButton addButton"
+    "location location-input"
+    "category category-input"
+    "item item-input"
+    "description description-input"
+    "uom uom-input"
+    "case case-input"
+    "vendor vendor-input"
+    "vc vc-input"
+    "add-button add-button"
   ;
   place-items: center;
   list-style-type: none;
@@ -34,8 +34,8 @@
   max-width: 100%;
 }
 
-.cardHeader {
-  grid-area: cardHeader;
+.card-header {
+  grid-area: card-header;
   margin-top: 0;
 }
 
@@ -44,37 +44,37 @@
   padding: 0;
 }
 
-.locationInput {
-  grid-area: locationInput;
+.location-input {
+  grid-area: location-input;
 }
 
 .category {
   grid-area: category;
 }
 
-.categoryInput {
-  grid-area: categoryInput;
+.category-input {
+  grid-area: category-input;
 }
 
 
-.itemInput {
-  grid-area: itemInput;
+.item-input {
+  grid-area: item-input;
 }
 
-.descriptionInput {
-  grid-area: descriptionInput;
+.description-input {
+  grid-area: description-input;
 }
 
-.uomInput {
-  grid-area: uomInput;
+.uom-input {
+  grid-area: uom-input;
 }
 
-.caseInput {
-  grid-area: caseInput;
+.case-input {
+  grid-area: case-input;
 }
 
-.vendorInput {
-  grid-area: vendorInput;
+.vendor-input {
+  grid-area: vendor-input;
 }
 
 .item-container {
@@ -83,17 +83,17 @@
   align-items: center;
 }
 
-.addButton {
-  grid-area: addButton;
+.add-button {
+  grid-area: add-button;
 }
 
 .card {
   display: grid;
   grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
   grid-template-areas:
-    "cardHeader"
-    "cardUl"
-    "cardButton"
+    "card-header"
+    "card-ul"
+    "card-button"
   ;
   justify-content: center;
   place-items: center;
@@ -107,7 +107,7 @@
 
 }
 
-.createForm {
+.create-form {
   display: flex;
   align-items: center;
 }

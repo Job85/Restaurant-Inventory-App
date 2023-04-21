@@ -80,7 +80,7 @@ const ItemDetails = (props) => {
                 Save
             </button>
             <div onClick={() => handleDelete(props.newItem._id)}>
-                <button id='deleteButton' type='submit'>Delete</button>
+                <button id='delete-button' type='submit'>Delete</button>
             </div>
         </div >
     )

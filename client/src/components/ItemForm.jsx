@@ -13,11 +13,11 @@ const ItemForm = (props) => {
 
     return (
         <>
-            <h1 className="pageTitle">Create A New Inventory Item</h1>
-            <p className="pageDescription">Fill out the form below to create a new item for your inventory</p>
+            <h1 className="page-title">Create A New Inventory Item</h1>
+            <p className="page-description">Fill out the form below to create a new item for your inventory</p>
             <form onSubmit={props.handleSubmit}>
                 <Card
-                    className="homeCard"
+                    className="home-card"
                     cardTitle="New Item Form"
                 >
                     <input
@@ -26,7 +26,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'location'}
                         placeholder={'location'}
-                        className='locationInput'
+                        className='location-input'
                     />
                     <input
                         type='text'
@@ -34,7 +34,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'category'}
                         placeholder={'category'}
-                        className='categoryInput'
+                        className='category-input'
                     />
                     <input
                         type='text'
@@ -42,7 +42,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'item_name'}
                         placeholder={'item'}
-                        className='itemInput'
+                        className='item-input'
                     />
                     <input
                         type='text'
@@ -50,7 +50,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'description'}
                         placeholder={'description'}
-                        className='descriptionInput'
+                        className='description-input'
                     />
                     <input
                         type='text'
@@ -58,7 +58,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'unit_measure'}
                         placeholder={'unit of measure'}
-                        className='uomInput'
+                        className='uom-input'
                     />
                     <input
                         type='text'
@@ -66,7 +66,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'case_size'}
                         placeholder={'case size'}
-                        className='caseInput'
+                        className='case-input'
                     />
                     <input
                         type='text'
@@ -74,7 +74,7 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'vendor_name'}
                         placeholder={'vendor_name'}
-                        className='vendorInput'
+                        className='vendor-input'
                     />
                     <input
                         type='text'
@@ -82,11 +82,11 @@ const ItemForm = (props) => {
                         onChange={props.handleChange}
                         name={'vendor_code'}
                         placeholder={'vendor_code'}
-                        className='vcInput'
+                        className='vc-input'
                     />
                     <button
                         type="submit"
-                        className="addButton"
+                        className="add-button"
                     >
                         Add Item
                     </button>

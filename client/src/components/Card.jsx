@@ -19,9 +19,9 @@ const Card = ({ children }) => {
 
     return (
         <div className="card">
-            <h2 className="cardHeader">{cardTitle}</h2>
+            <h2 className="card-header">{cardTitle}</h2>
             <div>
-                <ul className="cardUl">{inventoryItem}{children}</ul>
+                <ul className="card-ul">{inventoryItem}{children}</ul>
             </div>
         </div>
     )
