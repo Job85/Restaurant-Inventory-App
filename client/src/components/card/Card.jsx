@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from 'react-redux';
+import CardHeader from "./CardHeader";
 
 const item = [
     <b className="location">Location:</b>,
@@ -15,11 +16,10 @@ const item = [
 const inventoryItem = item.map((content, index) => <li key={index}>{content}</li>);
 
 const Card = ({ children }) => {
-    const cardTitle = useSelector((state) => state.cardTitle);
 
     return (
         <div className="card">
-            <h2 className="card-header">{cardTitle}</h2>
+            <CardHeader />
             <div>
                 <ul className="card-ul">{inventoryItem}{children}</ul>
             </div>
