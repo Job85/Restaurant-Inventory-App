@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../../../globals";
+import { BASE_URL } from "../../globals";
 import axios from "axios";
 
-export const useItemHook = () => {
+export const useItemCard = () => {
     let navigate = useNavigate();
 
     const [item, setItem] = useState({
