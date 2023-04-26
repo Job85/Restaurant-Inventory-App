@@ -34,15 +34,15 @@ export const useItem = () => {
         }
     };
 
-    const getItem = async () => {
-        let item = await axios.get(`${BASE_URL}/item/${id}`)
-        setItem(item.data[0])
-        console.log(item.data)
-    }
+    // const getItem = async () => {
+    //     let item = await axios.get(`${BASE_URL}/item/${id}`)
+    //     setItem(item.data[0])
+    //     console.log(item.data)
+    // }
 
-    useEffect(() => {
-        getItem();
-    }, [])
+    // useEffect(() => {
+    //     getItem();
+    // }, [])
 
     const updateItem = async () => {
         let url = `${BASE_URL}/item/update/${id}`

@@ -21,13 +21,13 @@ const ItemForm = (props) => {
         dispatch(setButtonName('Add'));
     }, [dispatch]);
 
-    const { item, handleChange, usePostSubmit } = useItem();
+    const { item, handleChange, handlePostSubmit } = useItem();
 
     return (
         <>
             <h1 className="page-title">Create A New Inventory Item</h1>
             <p className="page-description">Fill out the form below to create a new item for your inventory</p>
-            <form onSubmit={usePostSubmit}>
+            <form onSubmit={handlePostSubmit}>
                 <Card
                     className="home-card"
                     cardTitle=""
