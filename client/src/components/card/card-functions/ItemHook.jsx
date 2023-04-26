@@ -8,7 +8,7 @@ export const useItem = () => {
 
     let { id } = useParams();
 
-    const [item, setItem] = useState({
+    let [item, setItem] = useState({
         location: '',
         category: '',
         item_name: '',
@@ -18,6 +18,7 @@ export const useItem = () => {
         vendor_name: '',
         vendor_code: ''
     })
+
     const handleChange = (e) => {
         setItem({ ...item, [e.target.name]: e.target.value })
         // console.log(item)
@@ -34,15 +35,15 @@ export const useItem = () => {
         }
     };
 
-    // const getItem = async () => {
-    //     let item = await axios.get(`${BASE_URL}/item/${id}`)
-    //     setItem(item.data[0])
-    //     console.log(item.data)
-    // }
+    const getItem = async () => {
+        let item = await axios.get(`${BASE_URL}/item/${id}`)
+        setItem(item.data[0])
+        console.log(item.data)
+    }
 
-    // useEffect(() => {
-    //     getItem();
-    // }, [])
+    useEffect(() => {
+        getItem();
+    }, [])
 
     const updateItem = async () => {
         let url = `${BASE_URL}/item/update/${id}`
