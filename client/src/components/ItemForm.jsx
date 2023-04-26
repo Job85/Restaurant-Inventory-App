@@ -4,6 +4,7 @@ import { setCardTitle } from '../slices/cardTitleSlice';
 import Card from "./card/Card";
 import Button from './Button';
 import { setButtonName } from "../slices/buttonNameSlice";
+import { useItem } from "./card/card-functions/ItemHook";
 
 const ItemForm = (props) => {
 
@@ -20,76 +21,77 @@ const ItemForm = (props) => {
         dispatch(setButtonName('Add'));
     }, [dispatch]);
 
+    const { item, handleChange, usePostSubmit } = useItem();
 
     return (
         <>
             <h1 className="page-title">Create A New Inventory Item</h1>
             <p className="page-description">Fill out the form below to create a new item for your inventory</p>
-            <form onSubmit={props.handleSubmit}>
+            <form onSubmit={usePostSubmit}>
                 <Card
                     className="home-card"
                     cardTitle=""
                 >
                     <input
                         type='text'
-                        defaultValue={props.newItem.location}
-                        onChange={props.handleChange}
+                        defaultValue={item.location}
+                        onChange={handleChange}
                         name={'location'}
                         placeholder={'location'}
                         className='location-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.category}
-                        onChange={props.handleChange}
+                        defaultValue={item.category}
+                        onChange={handleChange}
                         name={'category'}
                         placeholder={'category'}
                         className='category-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.item_name}
-                        onChange={props.handleChange}
+                        defaultValue={item.item_name}
+                        onChange={handleChange}
                         name={'item_name'}
                         placeholder={'item'}
                         className='item-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.description}
-                        onChange={props.handleChange}
+                        defaultValue={item.description}
+                        onChange={handleChange}
                         name={'description'}
                         placeholder={'description'}
                         className='description-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.unit_measure}
-                        onChange={props.handleChange}
+                        defaultValue={item.unit_measure}
+                        onChange={handleChange}
                         name={'unit_measure'}
                         placeholder={'unit of measure'}
                         className='uom-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.case_size}
-                        onChange={props.handleChange}
+                        defaultValue={item.case_size}
+                        onChange={handleChange}
                         name={'case_size'}
                         placeholder={'case size'}
                         className='case-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.vendor_name}
-                        onChange={props.handleChange}
+                        defaultValue={item.vendor_name}
+                        onChange={handleChange}
                         name={'vendor_name'}
                         placeholder={'vendor_name'}
                         className='vendor-input'
                     />
                     <input
                         type='text'
-                        defaultValue={props.newItem.vendor_code}
-                        onChange={props.handleChange}
+                        defaultValue={item.vendor_code}
+                        onChange={handleChange}
                         name={'vendor_code'}
                         placeholder={'vendor_code'}
                         className='vc-input'
