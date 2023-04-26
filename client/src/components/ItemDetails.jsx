@@ -32,7 +32,6 @@ const ItemDetails = (props) => {
 
     return (
         <div className='items'>
-            <h1>Edit</h1>
             <ItemForm
                 title="Edit Item"
                 item={item}

@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './App.css';
 import Header from './components/Nav';
 import Home from './pages/Home';
 import Items from './pages/Items';
 import ItemForm from './components/ItemForm';
 import ItemDetails from './components/ItemDetails';
-import axios from 'axios';
+import EditItem from './pages/EditItem';
 // import { BASE_URL } from './globals';
 
 // let BASE_URL = 'https://inventory-api-eoqp.onrender.com/api'
@@ -58,7 +59,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
           <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
-          <Route path='/items/:id' element={<ItemDetails newItem={newItem} setNewItem={setNewItem} handleChange={handleChange} />} />
+          <Route path='/items/:id' element={<EditItem newItem={newItem} setNewItem={setNewItem} handleChange={handleChange} />} />
         </Routes>
       </main>
     </div>
