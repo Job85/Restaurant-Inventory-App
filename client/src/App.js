@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Items from './pages/Items';
 import ItemForm from './components/ItemForm';
 import ItemDetails from './components/ItemDetails';
+import NewItem from './pages/NewItem';
 import EditItem from './pages/EditItem';
 // import { BASE_URL } from './globals';
 
@@ -58,7 +59,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/items' element={<Items handleUpdate={handleUpdate} />} />
-          <Route path='/new' element={<ItemForm newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
+          <Route path='/new' element={<NewItem newItem={newItem} handleChange={handleChange} handleSubmit={handleSubmit} />} />
           <Route path='/items/:id' element={<EditItem newItem={newItem} setNewItem={setNewItem} handleChange={handleChange} />} />
         </Routes>
       </main>
