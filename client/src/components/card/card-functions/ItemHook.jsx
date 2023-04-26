@@ -42,8 +42,10 @@ export const useItem = () => {
     }
 
     useEffect(() => {
-        getItem();
-    }, [])
+        if (id) {
+            getItem(id);
+        }
+    }, [id])
 
     const updateItem = async () => {
         let url = `${BASE_URL}/item/update/${id}`
