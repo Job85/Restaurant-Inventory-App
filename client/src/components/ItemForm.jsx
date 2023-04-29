@@ -6,7 +6,7 @@ import Button from './Button';
 import { setButtonName } from "../slices/buttonNameSlice";
 import { useItem } from "./card/card-functions/ItemHook";
 
-const ItemForm = (props) => {
+const ItemForm = ({ editMode }) => {
 
     // Dispatch action to Redux store
     const dispatch = useDispatch();
@@ -14,11 +14,6 @@ const ItemForm = (props) => {
     // change cardTitle=""
     useEffect(() => {
         dispatch(setCardTitle('New Item Form'));
-    }, [dispatch]);
-
-    // change buttonName=""
-    useEffect(() => {
-        dispatch(setButtonName('Add'));
     }, [dispatch]);
 
     const { item, handleChange, handlePostSubmit } = useItem();
@@ -94,11 +89,31 @@ const ItemForm = (props) => {
                         placeholder={'vendor_code'}
                         className='vc-input'
                     />
-                    <Button
-                        type='submit'
-                        className='add-button'
-                        buttonName=""
-                    />
+                    <>
+                        {editMode ? (
+                            <>
+                                <Button
+                                    type='submit'
+                                    id='save-button'
+                                    className='card-button'
+                                    buttonName="Save"
+                                />
+                                <Button
+                                    type='submit'
+                                    id='delete-button'
+                                    className='card-button'
+                                    buttonName="Delete"
+                                />
+                            </>
+                        ) : (
+                            <Button
+                                type='submit'
+                                id='add-button'
+                                className='card-button'
+                                buttonName="Add"
+                            />
+                        )}
+                    </>
                 </Card>
             </form>
         </>

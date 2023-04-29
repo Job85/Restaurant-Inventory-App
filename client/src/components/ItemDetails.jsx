@@ -35,15 +35,8 @@ const ItemDetails = (props) => {
             <ItemForm
                 title="Edit Item"
                 item={item}
+                editMode={true}
             />
-            <button
-                onClick={() => handlePutSubmit}
-            >
-                Save
-            </button>
-            <div onClick={() => handleDelete(props.newItem._id)}>
-                <button id='delete-button' type='submit'>Delete</button>
-            </div>
         </div >
     )
 }
