@@ -11,10 +11,6 @@ import { useNavigate, useParams } from "react-router-dom";
 
 const ItemForm = ({ editMode }) => {
 
-    const id = useParams();
-
-    const navigate = useNavigate();
-
     // Dispatch action to Redux store
     const dispatch = useDispatch();
 
@@ -23,12 +19,7 @@ const ItemForm = ({ editMode }) => {
         dispatch(setCardTitle('New Item Form'));
     }, [dispatch]);
 
-    const { item, handleChange, handlePostSubmit, handlePutSubmit, } = useItem();
-
-    const handleDelete = async (_id) => {
-        await axios.delete(`${BASE_URL}/item/delete/${id}`).then(
-            () => navigate('items'))
-    }
+    const { item, handleChange, handlePostSubmit, handlePutSubmit, handleDelete } = useItem();
 
     return (
         <>

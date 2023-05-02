@@ -70,7 +70,6 @@ export const useItem = () => {
         })
         axios.put(`${BASE_URL}/item/update/${id}`, item)
         navigate('/items');
-        console.log(item)
     }
 
     const handleDelete = async (_id) => {
@@ -89,8 +88,3 @@ export const useItem = () => {
 };
 
 export default useItem;
-
-// import { useItemCard } into ItemForm
-// remove props from onSubmit, defaultValue, handleChange
-// change newItem => item
-// call hook above return const { item, handleChange, handleSubmit } = useItemCard()
