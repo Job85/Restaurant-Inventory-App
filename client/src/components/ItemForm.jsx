@@ -5,8 +5,15 @@ import Card from "./card/Card";
 import Button from './Button';
 import { setButtonName } from "../slices/buttonNameSlice";
 import { useItem } from "./card/card-functions/ItemHook";
+import axios from "axios";
+import { BASE_URL } from "../globals";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ItemForm = ({ editMode }) => {
+
+    const id = useParams();
+
+    const navigate = useNavigate();
 
     // Dispatch action to Redux store
     const dispatch = useDispatch();
@@ -16,11 +23,16 @@ const ItemForm = ({ editMode }) => {
         dispatch(setCardTitle('New Item Form'));
     }, [dispatch]);
 
-    const { item, handleChange, handlePostSubmit } = useItem();
+    const { item, handleChange, handlePostSubmit, handlePutSubmit, } = useItem();
+
+    const handleDelete = async (_id) => {
+        await axios.delete(`${BASE_URL}/item/delete/${id}`).then(
+            () => navigate('items'))
+    }
 
     return (
         <>
-            <form onSubmit={handlePostSubmit}>
+            <form>
                 <Card
                     className="home-card"
                     cardTitle=""
@@ -92,26 +104,35 @@ const ItemForm = ({ editMode }) => {
                     <>
                         {editMode ? (
                             <>
-                                <Button
+                                <button
                                     type='submit'
                                     id='save-button'
-                                    className='card-button'
-                                    buttonName="Save"
-                                />
-                                <Button
+                                    // className='card-button'
+                                    // buttonName="Save"
+                                    onClick={handlePutSubmit}
+                                >
+                                    Save
+                                </button>
+                                <button
                                     type='submit'
                                     id='delete-button'
-                                    className='card-button'
-                                    buttonName="Delete"
-                                />
+                                    // className='card-button'
+                                    // buttonName="Delete"
+                                    onClick={handleDelete}
+                                >
+                                    Delete
+                                </button>
                             </>
                         ) : (
-                            <Button
+                            <button
                                 type='submit'
                                 id='add-button'
                                 className='card-button'
-                                buttonName="Add"
-                            />
+                                // buttonName="Add"
+                                onClick={handlePostSubmit}
+                            >
+                                Add
+                            </button>
                         )}
                     </>
                 </Card>

@@ -16,11 +16,11 @@ const ItemDetails = (props) => {
     let navigate = useNavigate()
     let { id } = useParams()
 
-    useEffect(() => {
-        if (itemData) {
-            dispatch(setCardTitle(`Edit ${itemData}`));
-        }
-    }, [dispatch, itemData])
+    // useEffect(() => {
+    //     if (itemData) {
+    //         dispatch(setCardTitle(`Edit ${itemData}`));
+    //     }
+    // }, [dispatch, itemData])
 
 
     const handleDelete = async (_id) => {

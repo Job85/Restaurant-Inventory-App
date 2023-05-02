@@ -70,14 +70,21 @@ export const useItem = () => {
         })
         axios.put(`${BASE_URL}/item/update/${id}`, item)
         navigate('/items');
-        console.log(setItem)
+        console.log(item)
+    }
+
+    const handleDelete = async (_id) => {
+        await axios.delete(`${BASE_URL}/item/delete/${id}`).then(
+            () => navigate('items')
+        )
     }
 
     return {
         item,
         handleChange,
         handlePostSubmit,
-        handlePutSubmit
+        handlePutSubmit,
+        handleDelete
     };
 };
 
