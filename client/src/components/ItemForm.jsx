@@ -5,9 +5,6 @@ import Card from "./card/Card";
 import Button from './Button';
 import { setButtonName } from "../slices/buttonNameSlice";
 import { useItem } from "./card/card-functions/ItemHook";
-import axios from "axios";
-import { BASE_URL } from "../globals";
-import { useNavigate, useParams } from "react-router-dom";
 
 const ItemForm = ({ editMode }) => {
 
@@ -95,24 +92,28 @@ const ItemForm = ({ editMode }) => {
                     <>
                         {editMode ? (
                             <>
-                                <button
-                                    type='submit'
-                                    id='save-button'
-                                    // className='card-button'
-                                    // buttonName="Save"
-                                    onClick={handlePutSubmit}
-                                >
-                                    Save
-                                </button>
-                                <button
-                                    type='submit'
-                                    id='delete-button'
-                                    // className='card-button'
-                                    // buttonName="Delete"
-                                    onClick={handleDelete}
-                                >
-                                    Delete
-                                </button>
+                                <div>
+                                    <button
+                                        type='submit'
+                                        id='save-button'
+                                        // className='card-button'
+                                        // buttonName="Save"
+                                        onClick={handlePutSubmit}
+                                    >
+                                        Save
+                                    </button>
+                                </div>
+                                <div>
+                                    <button
+                                        type='submit'
+                                        id='delete-button'
+                                        // className='card-button'
+                                        // buttonName="Delete"
+                                        onClick={handleDelete}
+                                    >
+                                        Delete
+                                    </button>
+                                </div>
                             </>
                         ) : (
                             <button

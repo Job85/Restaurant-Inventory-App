@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../../../globals";
 import axios from "axios";
@@ -21,14 +21,13 @@ export const useItem = () => {
 
     const handleChange = (e) => {
         setItem({ ...item, [e.target.name]: e.target.value })
-        // console.log(item)
     }
 
     const handlePostSubmit = async (e) => {
         console.log(item)
         e.preventDefault();
         try {
-            const res = await axios.post(`${BASE_URL}/item/create`, item);
+            await axios.post(`${BASE_URL}/item/create`, item);
             navigate("/items");
         } catch (error) {
             console.log(error);
@@ -71,19 +70,22 @@ export const useItem = () => {
         navigate('/items');
     }
 
-    const handleDelete = async (_id) => {
-        await axios.delete(`${BASE_URL}/item/delete/${id}`).then(
-            () => navigate('items')
-        )
+    const handleDelete = async (e) => {
+        e.preventDefault();
+        try {
+            await axios.delete(`${BASE_URL}/item/delete/${id}`);
+            navigate("/items")
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return {
         item,
+        setItem,
         handleChange,
         handlePostSubmit,
         handlePutSubmit,
         handleDelete
     };
 };
-
-export default useItem;
