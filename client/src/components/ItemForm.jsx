@@ -5,8 +5,10 @@ import Card from "./card/Card";
 import Button from './Button';
 import { setButtonName } from "../slices/buttonNameSlice";
 import { useItem } from "./card/card-functions/ItemHook";
+// Fix rendering of "Add & Delete buttons" try to put padding to seperate Add button is hiding Delete button
+// Add Button is sending blank fields to API call
 
-const ItemForm = ({ editMode }) => {
+const ItemForm = () => {
 
     // Dispatch action to Redux store
     const dispatch = useDispatch();
@@ -20,10 +22,11 @@ const ItemForm = ({ editMode }) => {
 
     return (
         <>
-            <form>
+            <form className="create-form">
                 <Card
-                    className="home-card"
+                    className="input home-card"
                     cardTitle=""
+                    editMode={false}
                 >
                     <input
                         type='text'
@@ -31,7 +34,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'location'}
                         placeholder={'location'}
-                        className='location-input'
+                        className='input location-input'
                     />
                     <input
                         type='text'
@@ -39,7 +42,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'category'}
                         placeholder={'category'}
-                        className='category-input'
+                        className='input category-input'
                     />
                     <input
                         type='text'
@@ -47,7 +50,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'item_name'}
                         placeholder={'item'}
-                        className='item-input'
+                        className='input item-input'
                     />
                     <input
                         type='text'
@@ -55,7 +58,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'description'}
                         placeholder={'description'}
-                        className='description-input'
+                        className='input description-input'
                     />
                     <input
                         type='text'
@@ -63,7 +66,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'unit_measure'}
                         placeholder={'unit of measure'}
-                        className='uom-input'
+                        className='input uom-input'
                     />
                     <input
                         type='text'
@@ -71,7 +74,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'case_size'}
                         placeholder={'case size'}
-                        className='case-input'
+                        className='input case-input'
                     />
                     <input
                         type='text'
@@ -79,7 +82,7 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'vendor_name'}
                         placeholder={'vendor_name'}
-                        className='vendor-input'
+                        className='input vendor-input'
                     />
                     <input
                         type='text'
@@ -87,46 +90,9 @@ const ItemForm = ({ editMode }) => {
                         onChange={handleChange}
                         name={'vendor_code'}
                         placeholder={'vendor_code'}
-                        className='vc-input'
+                        className='input vc-input'
                     />
-                    <>
-                        {editMode ? (
-                            <>
-                                <div>
-                                    <button
-                                        type='submit'
-                                        id='save-button'
-                                        // className='card-button'
-                                        // buttonName="Save"
-                                        onClick={handlePutSubmit}
-                                    >
-                                        Save
-                                    </button>
-                                </div>
-                                <div>
-                                    <button
-                                        type='submit'
-                                        id='delete-button'
-                                        // className='card-button'
-                                        // buttonName="Delete"
-                                        onClick={handleDelete}
-                                    >
-                                        Delete
-                                    </button>
-                                </div>
-                            </>
-                        ) : (
-                            <button
-                                type='submit'
-                                id='add-button'
-                                className='card-button'
-                                // buttonName="Add"
-                                onClick={handlePostSubmit}
-                            >
-                                Add
-                            </button>
-                        )}
-                    </>
+
                 </Card>
             </form>
         </>
